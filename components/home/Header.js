@@ -4,9 +4,7 @@ import React from 'react'
 const Header = () => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity>
                 <Image style={styles.logo} source={require('../../assets/header-logo.png')} />
-            </TouchableOpacity>
             <View style={styles.iconsContainer}>
             <TouchableOpacity>
                 <Image source={require('../../assets/add-icon.png')} style={styles.icon} />

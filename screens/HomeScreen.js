@@ -2,6 +2,8 @@ import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 import Header from '../components/home/Header'
 import Stories from '../components/home/Stories'
+import Posts from '../components/home/Posts'
+import { POSTS } from '../data/posts'
 
 
 const HomeScreen = () => {
@@ -9,6 +11,10 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <Header />
       <Stories />
+      {POSTS.map((posts,index) =>(
+
+        <Posts posts={posts} key={index}/>
+      ))}
     </SafeAreaView>
   )
 }
