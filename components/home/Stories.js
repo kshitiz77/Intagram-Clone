@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { USERS } from '../../data/users'
+import { Divider } from 'react-native-elements/dist/divider/Divider'
 
 const Stories = () => {
   return (
@@ -25,6 +26,7 @@ const Stories = () => {
           </TouchableOpacity>
         ))}
       </ScrollView>
+         <Divider width={1} orientation='vertical' />
     </View>
   )
 }
@@ -32,7 +34,8 @@ const Stories = () => {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 5,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginVertical:5
   },
   addStory: {
     width: 70,

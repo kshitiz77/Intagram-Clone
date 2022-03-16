@@ -7,6 +7,23 @@ export const POSTS = [
         profileImg : USERS[0].img,
         likes : 101,
         caption : 'Iron Man is a superhero appearing in American comic books published by Marvel Comics.',
+        commentCount: 4,
+        postTime: `12 hours`,
+        comment:[
+            {
+                user : 'Thanos',
+                comment : 'I found the stones',
+            },
+        ],
+    },
+    {
+        postImg : require('../assets/Thor.jpg'),
+        user : USERS[1].user,
+        profileImg : USERS[1].img,
+        likes : 201,
+        caption : 'Thor is a superhero appearing in American comic books published by Marvel Comics.',
+        commentCount: 5,
+        postTime: `20 hours`,
         comment:[
             {
                 user : 'Thanos',
