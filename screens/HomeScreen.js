@@ -5,11 +5,11 @@ import Stories from '../components/home/Stories'
 import Posts from '../components/home/Posts'
 import { POSTS } from '../data/posts'
 import BottomTab, { BottomTabIcons } from '../components/home/BottomTab'
-
+import { styles } from '../styles'
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.homeScreenContainer}>
       <Header />
       <ScrollView >
         <Stories />
@@ -21,12 +21,5 @@ const HomeScreen = () => {
     </SafeAreaView>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'black',
-    flex: 1,
-  }
-})
-
 
 export default HomeScreen

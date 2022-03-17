@@ -1,12 +1,10 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native'
 import React from 'react'
-
-const win = Dimensions.get('window');
-const ratio = win.width / 440;
+import { styles } from '../../styles';
 
 const Posts = ({ posts }) => {
     return (
-        <View style={styles.postContainer}>
+        <View style={styles.homeScreenPostContainer}>
             <PostHeader posts={posts} />
             <PostImage posts={posts} />
             <PostIcon />
@@ -17,15 +15,15 @@ const Posts = ({ posts }) => {
 }
 
 const PostHeader = ({ posts }) => (
-    <View style={styles.postHeaderContainer}>
+    <View style={styles.homeScreenPostHeaderContainer}>
         <TouchableOpacity>
-            <View style={styles.userProfile}>
-                <Image source={posts.profileImg} style={styles.profileImg} />
-                <Text style={styles.user}>{posts.user}</Text>
+            <View style={styles.homeScreenPostUserProfile}>
+                <Image source={posts.profileImg} style={styles.homeScreenPostProfileImg} />
+                <Text style={styles.homeScreenPostUser}>{posts.user}</Text>
             </View>
         </TouchableOpacity>
         <TouchableOpacity>
-            <Text style={styles.moreFontText}>...</Text>
+            <Image source={require('../../assets/more.png')} style={styles.homeScreenPostMoreIcon}/>
         </TouchableOpacity>
     </View>
 )
@@ -33,46 +31,44 @@ const PostHeader = ({ posts }) => (
 const PostImage = ({ posts }) => {
     return (
         <View>
-            <Image source={posts.postImg} style={styles.postImage} resizeMode="cover" />
+            <Image source={posts.postImg} style={styles.homeScreenPostImage} resizeMode="cover" />
         </View>
     )
 }
 
 const PostIcon = () => {
     return (
-        <View style={styles.postIconContainer}>
-            <View style={styles.postIconLeftSide}>
+        <View style={styles.homeScreenPostIconContainer}>
+            <View style={styles.homeScreenPostIconLeftSide}>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Love-Icon.png')} style={styles.postIcon} />
+                    <Image source={require('../../assets/Love-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Comment-Icon.png')} style={styles.postIcon} />
+                    <Image source={require('../../assets/Comment-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Message-Icon.png')} style={styles.postIcon} />
+                    <Image source={require('../../assets/Message-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
             </View>
             <View>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Save-Icon.png')} style={styles.postIcon} />
+                    <Image source={require('../../assets/Save-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
 
-
-
 const PostFooter = ({ posts }) => {
     return (
-        <View style={styles.postFooterContainer}>
+        <View style={styles.homeScreenPostFooterContainer}>
             <View>
-                <Text style={styles.postLikesNum}>{posts.likes} likes</Text>
+                <Text style={styles.homeScreenPostLikesNum}>{posts.likes} likes</Text>
             </View>
-            <View style={styles.userCaption}>
+            <View style={styles.homeScreenPostUserCaption}>
                 <Text>
-                    <Text style={styles.userName}>{posts.user} </Text>
-                    <Text style={styles.userCaptionText}>{posts.caption}</Text>
+                    <Text style={styles.homeScreenPostUserName}>{posts.user} </Text>
+                    <Text style={styles.homeScreenPostUserCaptionText}>{posts.caption}</Text>
                 </Text>
             </View>
             
@@ -84,105 +80,15 @@ const PostComments = ({posts}) =>{
     return(
         <>
         <TouchableOpacity>
-                <View style={styles.commentsTextContainer}>
-                    <Text style={styles.commentsText}>View all {posts.commentCount} comments</Text>
+                <View style={styles.homeScreenPostCommentsTextContainer}>
+                    <Text style={styles.homeScreenPostCommentsText}>View all {posts.commentCount} comments</Text>
                 </View>
             </TouchableOpacity>
-            <View style={styles.postTimeContainer}>
+            <View style={styles.homeScreenPostTimeContainer}>
                 <Text style={styles.postTime}>{posts.postTime} ago</Text>
             </View>
         </>
     )
 }
-const styles = StyleSheet.create({
-    postContainer: {
-        marginTop: 8,
-    },
-    postHeaderContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        margin: 7,
-    },
-    userProfile: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    profileImg: {
-        width: 45,
-        height: 45,
-        borderRadius: 50,
-        borderWidth: 2,
-        borderColor: '#f5a142'
-    },
-    user: {
-        marginLeft: 7,
-        color: '#fff',
-        fontWeight: '700',
-    },
-    moreFontText: {
-        color: '#fff',
-        fontSize: 30,
-    },
-    postImage: {
-        // width: win.width,
-        // height: 440 * ratio,
-        // width:win?.width,
-        // height:win?.width,
-        width: win.width,
-        height: win.width,
-        resizeMode:'contain'
-
-    },
-    postIconContainer: {
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        marginVertical: 15,
-        marginHorizontal: 10
-    },
-    postIconLeftSide: {
-        flexDirection: 'row'
-    },
-    postIcon: {
-        width: 25,
-        height: 25,
-        resizeMode: 'contain',
-        marginHorizontal: 8,
-    },
-    postFooterContainer: {
-        marginHorizontal: 15,
-    },
-    postLikesNum: {
-        color: '#fff',
-        fontWeight: '900',
-    },
-    userCaption: {
-        flexDirection: 'row',
-        marginVertical: 5
-    },
-    userName: {
-        color: '#fff',
-        fontWeight: '700',
-    },
-    userCaptionText: {
-        color: '#fff',
-    },
-    commentsTextContainer:{
-        marginHorizontal:14
-    },
-    commentsText: {
-        color: '#858585',
-        fontWeight: '400',
-        fontSize: 16,
-        marginVertical: 2,
-    },
-    postTime: {
-        color: '#858585',
-        fontSize: 12,
-        marginVertical:2,
-        marginHorizontal:14
-    },
-    
-})
 
 export default Posts

@@ -1,9 +1,10 @@
-import { View, Text, TextInput, Image, StyleSheet, FlatList } from 'react-native'
+import { View, Text, TextInput, Image, StyleSheet, FlatList, Switch, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import * as Yup from 'yup'
 import { Formik } from 'formik'
 import { LOCATION } from '../../data/location'
 import { MUSIC_LIST } from '../../data/music'
+import { styles } from '../../styles'
 
 const PlaceholderImg = require('../../assets/instagram-icon.png')
 
@@ -17,6 +18,14 @@ const uploadPostSchema = Yup.object().shape({
 
 const FormikPostUploader = () => {
     const [thumbnailUrl, setThumbnailUrl] = useState(PlaceholderImg)
+    const [isFBEnabled, setIsFBEnabled] = useState(false);
+    const [isTwitterEnabled, setIsTwitterEnabled] = useState(false);
+    const [isTumblrEnabled, setIsTumblrEnabled] = useState(false);
+
+    const toggleFBSwitchBtn = () => setIsFBEnabled(previousState => !previousState);
+    const toggleTwitterSwitchBtn = () => setIsTwitterEnabled(previousState => !previousState);
+    const toggleTumblrSwitchBtn = () => setIsTumblrEnabled(previousState => !previousState);
+
     return (
         <Formik
             initialValues={{ imageUrl: ' ', caption: ' ' }}
@@ -25,24 +34,29 @@ const FormikPostUploader = () => {
         >
             {({ handleChange, handleBlur, error, values, handleSubmit, isValid }) => {
                 return <>
-                    <View style={styles.newPostContainer}>
-                        <Image source={require('../../assets/Iron-Man.jpg')} style={styles.userImg} />
-                        <TextInput
-                            placeholder='Write a caption....'
-                            placeholderTextColor='#fff'
-                            style={styles.captionText}
-                            multiline={true}
-                            onChangeText={handleChange('caption')}
-                            onBlur={handleBlur('caption')}
-                            value={values.caption}
-                        ></TextInput>
-
-                        <Image source={PlaceholderImg} style={styles.newPostImg} />
+                    <View style={styles.addNewPostContainer}>
+                        <View style={styles.addNewPostLeftContainer}>
+                            <Image source={require('../../assets/Iron-Man.jpg')} style={styles.addNewPostUserImg} />
+                            <TextInput
+                                placeholder='Write a caption....'
+                                placeholderTextColor='white'
+                                style={styles.addNewPostCaptionText}
+                                multiline={true}
+                                onChangeText={handleChange('caption')}
+                                onBlur={handleBlur('caption')}
+                                value={values.caption}
+                            ></TextInput>
+                        </View>
+                        <Image source={PlaceholderImg} style={styles.addNewPostImg} />
                     </View>
                     <Divider width={1} orientation='vertical' />
-                    <Text style={styles.actionText}>Tag people</Text>
+                    <TouchableOpacity>
+                    <Text style={styles.addNewPostActionText}>Tag people</Text>
+                    </TouchableOpacity>
                     <Divider width={1} orientation='vertical' />
-                    <Text style={styles.actionText}>Add location</Text>
+                    <TouchableOpacity>
+                    <Text style={styles.addNewPostActionText}>Add location</Text>
+                    </TouchableOpacity>
                     <Divider width={1} orientation='vertical' />
                     <FlatList
                         showsHorizontalScrollIndicator={false}
@@ -50,13 +64,15 @@ const FormikPostUploader = () => {
                         horizontal={true}
                         renderItem={(element) => {
                             return (
-                                <View style={styles.locationTextContainer}>
-                                    <Text style={styles.locationText}>{element.item.city}, {element.item.country}</Text>
+                                <View style={styles.addNewPostLocationTextContainer}>
+                                    <Text style={styles.addNewPostLocationText}>{element.item.city}, {element.item.country}</Text>
                                 </View>
                             )
                         }}></FlatList>
                     <Divider width={1} orientation='vertical' />
-                    <Text style={styles.actionText}>Add music</Text>
+                    <TouchableOpacity>
+                    <Text style={styles.addNewPostActionText}>Add music</Text>
+                    </TouchableOpacity>
                     <Divider width={1} orientation='vertical' />
                     <FlatList
                         showsHorizontalScrollIndicator={false}
@@ -64,102 +80,70 @@ const FormikPostUploader = () => {
                         horizontal={true}
                         renderItem={(element) => {
                             return (
-                                <View style={styles.locationTextContainer}>
-                                    <Text style={styles.locationText}>{element.item.singer}, {element.item.song}</Text>
+                                <View style={styles.addNewPostLocationTextContainer}>
+                                    <Text style={styles.addNewPostLocationText}>{element.item.singer}, {element.item.song}</Text>
                                 </View>
                             )
                         }}></FlatList>
                     <Divider width={1} orientation='vertical' />
-                    <View style={styles.alsoPostToContainer}>
-                        <Text style={styles.alsoPostToText}>Also post to</Text>
-                        <View style={styles.postOnFacebookContainer}>
-                            <View style={styles.postOnFacebookLeftSideContainer}>
-                                <Image source={require('../../assets/Iron-Man.jpg')} style={styles.userImg} />
-                                <View style={styles.postFacebookTextContainer}>
-                                    <Text style={styles.facebookText}>Facebook</Text>
-                                    <Text style={styles.userNameText}>Kshitiz Sharma</Text>
+                    <View style={styles.addNewPostAlsoPostToContainer}>
+                        <Text style={styles.addNewPostAlsoPostToText}>Also post to</Text>
+                        <View style={styles.addNewPostPostOnFacebookContainer}>
+                            <View style={styles.addNewPostPostOnFacebookLeftSideContainer}>
+                                <Image source={require('../../assets/Iron-Man.jpg')} style={styles.addNewPostUserImg} />
+                                <View style={styles.addNewPostPostFacebookTextContainer}>
+                                    <Text style={styles.addNewPostFacebookText}>Facebook</Text>
+                                    <Text style={styles.addNewPostUserNameText}>Kshitiz Sharma</Text>
                                 </View>
                             </View>
-                            <View style={styles.postOnFacebookRightSideContainer}>
-                                <Text style={{color:'#fff'}}>Kshitiz</Text>
+                            <View style={styles.addNewPostPostOnFacebookRightSideContainer}>
+                                <Switch
+                                   trackColor={{ false: "#767577", true: "#2e4f87" }}
+                                   thumbColor={isFBEnabled ? "#45a8ff" : "#f4f3f4"}
+                                   ios_backgroundColor="#3e3e3e"
+                                   onValueChange={toggleFBSwitchBtn}
+                                   value={isFBEnabled}
+                                />
+                            </View>
+                        </View>
+                        <View style={styles.addNewPostPostOnFacebookContainer}>
+                            <View style={styles.addNewPostPostOnFacebookLeftSideContainer}>
+                                <Text style={styles.addNewPostFacebookText}>Twitter</Text>
+                            </View>
+                            <View style={styles.addNewPostPostOnFacebookRightSideContainer}>
+                                <Switch
+                                    trackColor={{ false: "#767577", true: "#2e4f87" }}
+                                    thumbColor={isTwitterEnabled ? "#45a8ff" : "#f4f3f4"}
+                                    ios_backgroundColor="#3e3e3e"
+                                    onValueChange={toggleTwitterSwitchBtn}
+                                    value={isTwitterEnabled}
+                                />
+                            </View>
+                        </View>
+                        <View style={styles.addNewPostPostOnFacebookContainer}>
+                            <View style={styles.addNewPostPostOnFacebookLeftSideContainer}>
+                                <Text style={styles.addNewPostFacebookText}>Tumblr</Text>
+                            </View>
+                            <View style={styles.addNewPostPostOnFacebookRightSideContainer}>
+                                <Switch
+                                    trackColor={{ false: "#767577", true: "#2e4f87" }}
+                                    thumbColor={isTumblrEnabled ? "#45a8ff" : "#f4f3f4"}
+                                    ios_backgroundColor="#3e3e3e"
+                                    onValueChange={toggleTumblrSwitchBtn}
+                                    value={isTumblrEnabled}
+                                />
                             </View>
                         </View>
                     </View>
+                        <Divider width={1} orientation='vertical' />
+                        <TouchableOpacity>
+                            <Text style={styles.addNewPostAdvancedSettingsText}>Advanced settings</Text>
+                        </TouchableOpacity>
                 </>
             }
             }
         </Formik>
     )
 }
-
-const styles = StyleSheet.create({
-    newPostContainer: {
-        margin: 10,
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    userImg: {
-        width: 50,
-        height: 50,
-        borderRadius: 50
-    },
-    newPostImg: {
-        width: 70,
-        height: 70
-    },
-    captionText: {
-        fontSize: 20,
-        color: '#fff'
-    },
-    imageUrl: {
-        color: '#fff'
-    },
-    actionText: {
-        color: '#fff',
-        margin: 15,
-        fontWeight: '400',
-        fontSize: 16
-    },
-    locationTextContainer: {
-        backgroundColor: '#333333',
-        margin: 10,
-        paddingVertical: 5,
-        paddingHorizontal: 8,
-        borderRadius: 4
-    },
-    locationText: {
-        color: '#ababab'
-    },
-    alsoPostToContainer: {
-        margin: 15
-    },
-    alsoPostToText: {
-        fontSize: 16,
-        fontWeight: '400',
-        color: '#fff'
-    },
-    postOnFacebookContainer: {
-        flexDirection: 'row',
-        marginVertical: 15,
-        justifyContent:'space-between',
-        alignItems:'center'
-    },
-    postOnFacebookLeftSideContainer:{
-        flexDirection:'row',
-        alignItems:'center'
-    },
-    postFacebookTextContainer: {
-        marginLeft: 15
-    },
-    facebookText: {
-        color: '#fff',
-        fontSize:16,
-        fontWeight:'500'
-    },
-    userNameText: {
-        color: '#ccc'
-    }
-})
 
 export default FormikPostUploader

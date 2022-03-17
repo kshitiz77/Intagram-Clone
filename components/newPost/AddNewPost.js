@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import FormikPostUploader from './FormikPostUploader'
+import { styles } from '../../styles'
+
 
 
 const AddNewPost = () => {
@@ -14,31 +16,17 @@ const AddNewPost = () => {
 
 const Header = () =>{
     return(
-        <View style={styles.headerContainer}>
+        <View style={styles.addNewPostScreenHeaderContainer}>
+            <View style={styles.addNewPostScreenLeftSideHeader}>
             <TouchableOpacity>
-                <Image source={require('../../assets/back.png')} style={styles.backBtn}></Image>
+                <Image source={require('../../assets/back.png')} style={styles.addNewPostScreenBackBtn}></Image>
             </TouchableOpacity>
-            <Text style={styles.headerText}> New post</Text>
-            <Text></Text>
+            <Text style={styles.addNewPostScreenHeaderText}> New Post</Text>
+            </View>
+            <TouchableOpacity>
+           <Image source={require('../../assets/check.png')} style={styles.addNewPostScreenCheckIcon}/>
+            </TouchableOpacity>
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    headerContainer:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        margin:10
-    },
-    backBtn:{
-        width:30,
-        height:30
-    },
-    headerText:{
-        color:'#fff',
-        fontWeight:'600',
-        fontSize:18
-    }
-})
 export default AddNewPost

@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import { Divider } from 'react-native-elements/dist/divider/Divider'
+import { styles } from '../../styles'
 
 export const BottomTabIcons = [
   {
@@ -37,16 +38,16 @@ const BottomTab = ({ icons }) => {
     return (
       <TouchableOpacity onPress={() => setActiveTabIcon(icon.name)}>
         <Image source={activeTabIcon === icon.name ? icon.activeIcon : icon.inactiveIcon} 
-        style={[styles.icon, icon.name === 'Profile' ? styles.profilePic : null,
-        activeTabIcon === 'Profile' && icon.name === activeTabIcon ? styles.profilePic(activeTabIcon) : null
+        style={[styles.homeScreenBottonIcon, icon.name === 'Profile' ? styles.homeScreenProfilePic : null,
+        activeTabIcon === 'Profile' && icon.name === activeTabIcon ? styles.homeScreenProfilePic(activeTabIcon) : null
         ]} />
       </TouchableOpacity>
     )
   }
   return (
-    <View style={styles.wrapper}>
+    <View style={styles.homeScreenBottomWrapper}>
       <Divider width={1} orientation='vertical' />
-      <View style={styles.container}>
+      <View style={styles.homeScreenBottomContainer}>
         {icons.map((icon, index) => (
           <Icon key={index} icon={icon} />
         ))}
@@ -54,25 +55,5 @@ const BottomTab = ({ icons }) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  wrapper:{
-
-  },
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginVertical: 12,
-  },
-  icon: {
-    width: 25,
-    height: 25
-  },
-  profilePic:(activeTabIcon) =>({
-    borderWidth: activeTabIcon === 'Profile' ? 2 : 0,
-    borderRadius:50,
-    borderColor:'#fff'
-}),
-})
 
 export default BottomTab
