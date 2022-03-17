@@ -234,77 +234,84 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center'
-},
-addNewPostLeftContainer: {
+  },
+  addNewPostLeftContainer: {
     flexDirection: 'row',
     marginHorizontal: 5
-},
-addNewPostUserImg: {
+  },
+  addNewPostUserImg: {
     width: 40,
     height: 40,
     borderRadius: 50
-},
-addNewPostCaptionText: {
+  },
+  addNewPostCaptionText: {
     fontSize: 16,
     color: '#fff',
     marginLeft: 10,
-},
-addNewPostImg: {
-  width: 70,
-  height: 70
-},
-addNewPostActionText: {
+  },
+  addNewPostImg: {
+    width: 70,
+    height: 70
+  },
+  addNewPostActionText: {
     color: '#fff',
     margin: 12,
     fontWeight: '400',
     fontSize: 16
-},
-addNewPostLocationTextContainer: {
+  },
+  addNewPostLocationTextContainer: {
     backgroundColor: '#333333',
     margin: 10,
     paddingVertical: 5,
     paddingHorizontal: 8,
     borderRadius: 4
-},
-addNewPostLocationText: {
+  },
+  addNewPostLocationText: {
     color: '#ababab'
-},
-addNewPostAlsoPostToContainer: {
+  },
+  addNewPostAlsoPostToContainer: {
     margin: 12
-},
-addNewPostAlsoPostToText: {
+  },
+  addNewPostAlsoPostToText: {
     fontSize: 16,
     fontWeight: '400',
     color: '#fff'
-},
-addNewPostPostOnFacebookContainer: {
+  },
+  addNewPostPostOnFacebookContainer: {
     flexDirection: 'row',
     marginVertical: 15,
     justifyContent: 'space-between',
     alignItems: 'center'
-},
-addNewPostPostOnFacebookLeftSideContainer: {
+  },
+  addNewPostPostOnFacebookLeftSideContainer: {
     flexDirection: 'row',
     alignItems: 'center'
-},
-addNewPostPostFacebookTextContainer: {
+  },
+  addNewPostPostFacebookTextContainer: {
     marginLeft: 15
-},
-addNewPostFacebookText: {
+  },
+  addNewPostFacebookText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '500'
-},
-addNewPostUserNameText: {
+  },
+  addNewPostUserNameText: {
     color: '#ccc'
-},
-addNewPostAdvancedSettingsText:{
-    color:'#ccc',
-    marginVertical:10,
-    marginHorizontal:15
-    
-},
-// Add New Post Screen Post Container Close//
+  },
+  addNewPostAdvancedSettingsText: {
+    color: '#ccc',
+    marginVertical: 10,
+    marginHorizontal: 15
 
+  },
+  // Add New Post Screen Post Container Close//
   // Add New Post Screen Close //
+
+  //  Profile Screen Style Open//
+
+  profileScreenContainer: {
+    flex: 1,
+    backgroundColor: '#000'
+  }
+  //  Profile Screen Style Close//
 })
