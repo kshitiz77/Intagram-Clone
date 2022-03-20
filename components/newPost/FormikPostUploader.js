@@ -93,7 +93,7 @@ const FormikPostUploader = () => {
                                 <Image source={require('../../assets/Iron-Man.jpg')} style={styles.addNewPostUserImg} />
                                 <View style={styles.addNewPostPostFacebookTextContainer}>
                                     <Text style={styles.addNewPostFacebookText}>Facebook</Text>
-                                    <Text style={styles.addNewPostUserNameText}>Kshitiz Sharma</Text>
+                                    <Text style={styles.addNewPostUserNameText}>Iron Man</Text>
                                 </View>
                             </View>
                             <View style={styles.addNewPostPostOnFacebookRightSideContainer}>

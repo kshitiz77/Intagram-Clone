@@ -116,8 +116,8 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
   },
   homeScreenPostMoreIcon: {
-    width: 20,
-    height: 20
+    width: 15,
+    height: 15
   },
   homeScreenPostImage: {
     width: win.width,
@@ -311,7 +311,182 @@ export const styles = StyleSheet.create({
 
   profileScreenContainer: {
     flex: 1,
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    paddingVertical:10
+  },
+  // Profile Screen Header Container Style Open //
+  profileScreenHeaderContainer: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    marginHorizontal:15,
+    alignItems: 'center',
+  },
+  profileScreenHeaderUserName: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#fff',
+  },
+  profileScreenHeaderRightSideContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  profileScreenHeaderAddPostIcon: {
+    width: 25,
+    height: 25,
+  },
+  profileScreenHeaderMenuIcon: {
+    width: 20,
+    height: 27,
+    marginLeft: 25
+  },
+  // Profile Screen Header Container Style Close //
+
+  // Profile Screen User Details Container Style Open //
+  userDetailsContainer: {
+    marginVertical: 10,
+    marginHorizontal:15
+  },
+  userDetailsTopContainer: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  userDetailsLeftSideContainer: {
+    width:win.width/3,
+  },
+  userDetailsUserImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 50
+  },
+  userDetailsRightSideContainer: {
+    width:win.width/1.7,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  userDetailsCountContainer: {
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent:'space-between'
+  },
+  userDetailsCountNum: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#fff',
+  },
+  userDetailsCountText: {
+    fontSize: 15,
+    color: '#fff',
+    fontWeight: '400'
+  },
+  userDetailsBioContainer:{
+    flexDirection:'column',
+    justifyContent:'flex-start',
+    marginVertical:15,
+  },
+  userDetailsUserName:{
+    fontSize:16,
+    color:'#fff',
+    fontWeight:'500',
+  },
+  userDetailsBioText:{
+    color:'#fff',
+    fontSize:14,
+    fontWeight:'400'
+  },
+  userDetailsBottomContainer:{
+    flexDirection:'row',
+  },
+  userDetailsEditProfileTextContainer:{
+    width:'88%',
+    borderWidth:1,
+    borderColor:'#5c5c5c',
+    borderRadius:5,
+    padding:5
+  },
+  userDetailsEditProfileText:{
+    color:'#fff',
+    fontSize:16,
+    fontWeight:'500',
+    textAlign:'center'
+  },
+  userDetailsAddFriendIconContainer:{
+    width:'10%',
+    marginLeft:8,
+    borderWidth:1,
+    borderRadius:5,
+    borderColor:'#5c5c5c',
+    alignItems:'center',
+    justifyContent:'center',
+    padding:5
+  },
+  userDetailsAddFriendIcon:{
+    width:20,
+    height:20,
+  },
+  // Profile Screen User Details Container Style Close //
+
+  // Profile Screen Discover People Container Style Open //
+  discoverPeopleContainer:{
+    marginVertical:10
+  },
+  discoverPeopleHeader:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginHorizontal:15
+  },
+  discoverPeopleText:{
+    color:'#fff'
+  },
+  discoverPeopleSeeAllPeopleText:{
+    color:'#1a89d9',
+    fontWeight:'500'
+  },
+  discoverPeopleBodyContainer:{
+    borderColor:'#424242',
+    borderWidth:0.5,
+    borderRadius:5,
+    paddingVertical:10,
+    paddingHorizontal:15,
+    marginVertical:12,
+    marginLeft:12,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  discoverPeopleUserImageContainer:{
+    flexDirection:'row',
+  },
+  discoverPeopleUsersImage:{
+    marginHorizontal:10,
+    width:80,
+    height:80,
+    borderRadius:50,
+  },
+  discoverPeopleCloseIcon:{
+    width:10,
+    height:10
+  },
+  discoverPeopleNameContainer:{
+    marginVertical:8,
+    alignItems:'center'
+  },
+  discoverPeopleName:{
+   color:'#fff',
+   fontSize:14,
+   fontWeight:'400',
+  },
+  discoverPeopleFollowDetails:{
+    color:'#fff',
+    fontSize:12
+  },
+  discoverPeopleFollowBtn:{
+    backgroundColor:'#4ba4e3',
+    width:'100%',
+    alignItems:'center',
+    paddingVertical:3,
+    borderRadius:5
   }
+  // Profile Screen Discover People Container Style Close //
   //  Profile Screen Style Close//
 })
