@@ -5,6 +5,8 @@ import { styles } from '../styles'
 import UserDetails from '../components/profileScreen/UserDetails'
 import DiscoverPeople from '../components/profileScreen/DiscoverPeople'
 import PostScreenNavigation from '../components/profileScreen/PostScreenNavigation'
+import YourPosts from '../components/profileScreen/YourPosts'
+import TagPosts from '../components/profileScreen/TagPosts'
 
 const ProfileScreen = () => {
   const [showDiscoverPeople, setShowDiscoverPeople] = useState(false)
@@ -27,6 +29,7 @@ const ProfileScreen = () => {
         : null}
       <PostScreenNavigation />
       </ScrollView>
+      
     </SafeAreaView>
   )
 }

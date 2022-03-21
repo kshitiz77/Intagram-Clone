@@ -486,6 +486,10 @@ export const styles = StyleSheet.create({
     alignItems:'center',
     paddingVertical:3,
     borderRadius:5
+  },
+  profileTabIcon:{
+    width:24,
+    height:24,
   }
   // Profile Screen Discover People Container Style Close //
   //  Profile Screen Style Close//

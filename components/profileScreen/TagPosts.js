@@ -4,7 +4,7 @@ import React from 'react'
 const TagPosts = () => {
   return (
     <View>
-      <Text style={{color:'#fff'}}>Tag Posts</Text>
+      <Text style={{color:'#000', fontSize:22, backgroundColor:'#fff'}}>Tag Posts</Text>
     </View>
   )
 }
