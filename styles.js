@@ -312,13 +312,13 @@ export const styles = StyleSheet.create({
   profileScreenContainer: {
     flex: 1,
     backgroundColor: '#000',
-    paddingVertical:10
+    paddingVertical: 10
   },
   // Profile Screen Header Container Style Open //
   profileScreenHeaderContainer: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginHorizontal:15,
+    marginHorizontal: 15,
     alignItems: 'center',
   },
   profileScreenHeaderUserName: {
@@ -344,7 +344,7 @@ export const styles = StyleSheet.create({
   // Profile Screen User Details Container Style Open //
   userDetailsContainer: {
     marginVertical: 10,
-    marginHorizontal:15
+    marginHorizontal: 15
   },
   userDetailsTopContainer: {
     justifyContent: 'space-between',
@@ -352,7 +352,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   userDetailsLeftSideContainer: {
-    width:win.width/3,
+    width: win.width / 3,
   },
   userDetailsUserImage: {
     width: 80,
@@ -360,7 +360,7 @@ export const styles = StyleSheet.create({
     borderRadius: 50
   },
   userDetailsRightSideContainer: {
-    width:win.width/1.7,
+    width: win.width / 1.7,
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center'
@@ -368,7 +368,7 @@ export const styles = StyleSheet.create({
   userDetailsCountContainer: {
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent:'space-between'
+    justifyContent: 'space-between'
   },
   userDetailsCountNum: {
     fontSize: 18,
@@ -380,117 +380,157 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '400'
   },
-  userDetailsBioContainer:{
-    flexDirection:'column',
-    justifyContent:'flex-start',
-    marginVertical:15,
+  userDetailsBioContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    marginVertical: 15,
   },
-  userDetailsUserName:{
-    fontSize:16,
-    color:'#fff',
-    fontWeight:'500',
+  userDetailsUserName: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: '500',
   },
-  userDetailsBioText:{
-    color:'#fff',
-    fontSize:14,
-    fontWeight:'400'
+  userDetailsBioText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '400'
   },
-  userDetailsBottomContainer:{
-    flexDirection:'row',
+  userDetailsBottomContainer: {
+    flexDirection: 'row',
   },
-  userDetailsEditProfileTextContainer:{
-    width:'88%',
-    borderWidth:1,
-    borderColor:'#5c5c5c',
-    borderRadius:5,
-    padding:5
+  userDetailsEditProfileTextContainer: {
+    width: '88%',
+    borderWidth: 1,
+    borderColor: '#5c5c5c',
+    borderRadius: 5,
+    padding: 5
   },
-  userDetailsEditProfileText:{
-    color:'#fff',
-    fontSize:16,
-    fontWeight:'500',
-    textAlign:'center'
+  userDetailsEditProfileText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '500',
+    textAlign: 'center'
   },
-  userDetailsAddFriendIconContainer:{
-    width:'10%',
-    marginLeft:8,
-    borderWidth:1,
-    borderRadius:5,
-    borderColor:'#5c5c5c',
-    alignItems:'center',
-    justifyContent:'center',
-    padding:5
+  userDetailsAddFriendIconContainer: {
+    width: '10%',
+    marginLeft: 8,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#5c5c5c',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5
   },
-  userDetailsAddFriendIcon:{
-    width:20,
-    height:20,
+  userDetailsAddFriendIcon: {
+    width: 20,
+    height: 20,
   },
   // Profile Screen User Details Container Style Close //
 
   // Profile Screen Discover People Container Style Open //
-  discoverPeopleContainer:{
-    marginVertical:10
+  discoverPeopleContainer: {
+    marginVertical: 10
   },
-  discoverPeopleHeader:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    marginHorizontal:15
+  discoverPeopleHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 15
   },
-  discoverPeopleText:{
+  discoverPeopleText: {
+    color: '#fff'
+  },
+  discoverPeopleSeeAllPeopleText: {
+    color: '#1a89d9',
+    fontWeight: '500'
+  },
+  discoverPeopleBodyContainer: {
+    borderColor: '#424242',
+    borderWidth: 0.5,
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    marginVertical: 12,
+    marginLeft: 12,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  discoverPeopleUserImageContainer: {
+    flexDirection: 'row',
+  },
+  discoverPeopleUsersImage: {
+    marginHorizontal: 10,
+    width: 80,
+    height: 80,
+    borderRadius: 50,
+  },
+  discoverPeopleCloseIcon: {
+    width: 10,
+    height: 10
+  },
+  discoverPeopleNameContainer: {
+    marginVertical: 8,
+    alignItems: 'center'
+  },
+  discoverPeopleName: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '400',
+  },
+  discoverPeopleFollowDetails: {
+    color: '#fff',
+    fontSize: 12
+  },
+  discoverPeopleFollowBtn: {
+    backgroundColor: '#4ba4e3',
+    width: '100%',
+    alignItems: 'center',
+    paddingVertical: 3,
+    borderRadius: 5
+  },
+  profileTabIcon: {
+    width: 24,
+    height: 24,
+  },
+  // Profile Screen Discover People Container Style Close //
+  // Profile Screen Action Sheet Container Style Open//
+  profileScreenActionSheeetContainer: {
+    height: 400, 
+    backgroundColor: '#333333', 
+    borderTopLeftRadius: 10, 
+    borderTopRightRadius: 10
+  },
+  profileScreenActionSheeetCloseBtn:{
+   width:40,
+   borderColor:'#ccc',
+   borderWidth:2,
+   borderRadius:5
+  },
+  profileScreenActionSheeetHeader:{
+    alignItems: 'center', 
+    paddingTop:10,
+  },
+  profileScreenActionSheeetTitleText:{
+    fontSize:18,
+    fontWeight:'700',
+    marginVertical:8,
     color:'#fff'
   },
-  discoverPeopleSeeAllPeopleText:{
-    color:'#1a89d9',
-    fontWeight:'500'
-  },
-  discoverPeopleBodyContainer:{
-    borderColor:'#424242',
-    borderWidth:0.5,
-    borderRadius:5,
-    paddingVertical:10,
-    paddingHorizontal:15,
-    marginVertical:12,
-    marginLeft:12,
-    justifyContent:'center',
-    alignItems:'center'
-  },
-  discoverPeopleUserImageContainer:{
+  profileScreenActionSheeetMenuContainer:{
     flexDirection:'row',
-  },
-  discoverPeopleUsersImage:{
-    marginHorizontal:10,
-    width:80,
-    height:80,
-    borderRadius:50,
-  },
-  discoverPeopleCloseIcon:{
-    width:10,
-    height:10
-  },
-  discoverPeopleNameContainer:{
-    marginVertical:8,
+    marginVertical:15,
+    marginHorizontal:25,
     alignItems:'center'
   },
-  discoverPeopleName:{
-   color:'#fff',
-   fontSize:14,
-   fontWeight:'400',
+  profileScreenActionSheeetMenuIcon:{
+    width:22,
+    height:22
   },
-  discoverPeopleFollowDetails:{
+  profileScreenActionSheeetMenuTitle:{
     color:'#fff',
-    fontSize:12
-  },
-  discoverPeopleFollowBtn:{
-    backgroundColor:'#4ba4e3',
-    width:'100%',
-    alignItems:'center',
-    paddingVertical:3,
-    borderRadius:5
-  },
-  profileTabIcon:{
-    width:24,
-    height:24,
+    marginLeft:15,
+    fontSize:16,
+    fontWeight:'500'
   }
-  // Profile Screen Discover People Container Style Close //
+  // Profile Screen Action Sheet Container Style Close //
   //  Profile Screen Style Close//
 })

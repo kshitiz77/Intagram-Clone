@@ -1,15 +1,11 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
-
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import YourPosts from './YourPosts'
 import TagPosts from './TagPosts'
 import { styles } from '../../styles';
 
 const Tab = createMaterialTopTabNavigator();
-// const BottomTab = createMaterialBottomTabNavigator();
-
 const activeYourPostIcon = require('../../assets/activeGrid.png');
 const inactiveYourPostIcon = require('../../assets/inactiveGrid.png');
 const activeTagUser = require('../../assets/activeTagIcon.png');
@@ -42,10 +38,6 @@ const PostScreenNavigation = () => {
       <Tab.Screen  name="YourPosts" component={YourPosts} />
       <Tab.Screen name="TagPosts" component={TagPosts} />
     </Tab.Navigator>
-    // <BottomTab.Navigator>
-    //   <BottomTab.Screen name="YourPosts" component={YourPosts} />
-    //   <BottomTab.Screen name="TagPosts" component={TagPosts} />
-    // </BottomTab.Navigator>
   )
 }
 

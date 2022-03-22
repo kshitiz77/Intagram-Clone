@@ -3,8 +3,8 @@ import React from 'react'
 
 const TagPosts = () => {
   return (
-    <View>
-      <Text style={{color:'#000', fontSize:22, backgroundColor:'#fff'}}>Tag Posts</Text>
+    <View style={{backgroundColor:'#000', flex:1}}>
+      <Text style={{color:'#fff', fontSize:22}}>Tag Posts</Text>
     </View>
   )
 }
