@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, StatusBar } from "react-native";
 const win = Dimensions.get('window');
 const ratio = win.width / 440;
 
@@ -8,6 +8,8 @@ export const styles = StyleSheet.create({
   homeScreenContainer: {
     backgroundColor: 'black',
     flex: 1,
+    paddingTop:20,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 
   // Home Screen Header Style Open//
@@ -188,18 +190,15 @@ export const styles = StyleSheet.create({
     width: 25,
     height: 25
   },
-  homeScreenProfilePic: (activeTabIcon) => ({
-    borderWidth: activeTabIcon === 'Profile' ? 2 : 0,
-    borderRadius: 50,
-    borderColor: '#fff'
-  }),
   // Home Screen Bottom Container Style Close//
   // Home Screen Style Open //
 
   // Add New Post Screen Open //
   addNewPostScreencontainer: {
     flex: 1,
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    paddingTop:20,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
   },
   // Add New Post Screen Header Open//
   addNewPostScreenHeaderContainer: {
@@ -312,7 +311,8 @@ export const styles = StyleSheet.create({
   profileScreenContainer: {
     flex: 1,
     backgroundColor: '#000',
-    paddingVertical: 10
+    paddingTop:40,
+    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   // Profile Screen Header Container Style Open //
   profileScreenHeaderContainer: {
@@ -494,7 +494,7 @@ export const styles = StyleSheet.create({
   // Profile Screen Discover People Container Style Close //
   // Profile Screen Action Sheet Container Style Open//
   profileScreenActionSheeetContainer: {
-    height: 400, 
+    height: 390, 
     backgroundColor: '#333333', 
     borderTopLeftRadius: 10, 
     borderTopRightRadius: 10
@@ -530,7 +530,54 @@ export const styles = StyleSheet.create({
     marginLeft:15,
     fontSize:16,
     fontWeight:'500'
-  }
+  },
   // Profile Screen Action Sheet Container Style Close //
+// Profile Screen Your Posts Container Style Open //
+  yourPostsContainer:{
+    flex:1,
+    backgroundColor:'#000',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    flexWrap:'wrap'
+  },
+  yourPostsImgContainer:{
+    flexDirection:'row',
+    marginVertical:2
+  },
+  // Profile Screen Your Posts Container Style Close //
+  // Profile Screen Tag Posts Container Style Open //
+  tagPostsContainer: {
+    backgroundColor: '#000',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  tagPostIconContainer: {
+    borderColor: '#fff',
+    borderWidth: 2,
+    borderRadius: 80,
+    marginBottom:8
+  },
+  tagPostIcon: {
+    width: 50,
+    margin: 20,
+    height: 50
+  },
+  tagPostTitleContainer:{
+
+  },
+  tagPostTitle:{
+    fontSize:22,
+    fontWeight:'700',
+    color:'#fff',
+    textAlign:'center',
+  },
+  tagPostDescription:{
+    width:win.width/1.6,
+    color:'#ccc',
+    textAlign:'center',
+    marginTop:8
+  },
+  // Profile Screen Tag Posts Container Style Close //
   //  Profile Screen Style Close//
 })

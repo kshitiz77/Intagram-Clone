@@ -57,12 +57,14 @@ const ActionSheetMenuList = [
     menuTitle: 'Close Friends'
   },
   {
-    icon: require('../../assets/save.png'),
+    icon: require('../../assets/covid-icon.png'),
     menuTitle: 'COVID-19 Information Center'
   },
 ]
-const [actionSheetPostMenuRef, actionSheetMenuRef ] = createRef();
-const Header = () => {
+const actionSheetPostMenuRef  = createRef();
+const actionSheetMenuRef = createRef();
+
+const Header = ({navigation}) => {
 
 
   return (
@@ -77,7 +79,9 @@ const Header = () => {
           }}>
             <Image style={styles.profileScreenHeaderAddPostIcon} source={require('../../assets/add-icon.png')} />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            actionSheetMenuRef.current?.setModalVisible();
+          }}>
             <Image style={styles.profileScreenHeaderMenuIcon} source={require('../../assets/menu.png')} />
           </TouchableOpacity>
         </View>
@@ -91,7 +95,7 @@ const Header = () => {
           </View>
           <Divider orientation='vertical'></Divider>
           {ActionSheetAddPostMenu.map((menuList, index) =>(
-            <TouchableOpacity>
+            <TouchableOpacity key={index} onPress={() =>navigation.navigate('Post')}>
           <View style={styles.profileScreenActionSheeetMenuContainer}>
             <Image source={menuList.icon} style={styles.profileScreenActionSheeetMenuIcon}/>
             <Text style={styles.profileScreenActionSheeetMenuTitle}>{menuList.menuTitle}</Text>
@@ -105,11 +109,9 @@ const Header = () => {
           <View style={styles.profileScreenActionSheeetHeader}>
             <View style={styles.profileScreenActionSheeetCloseBtn}>
             </View>
-            <Text style={styles.profileScreenActionSheeetTitleText}>Create</Text>
           </View>
-          <Divider orientation='vertical'></Divider>
           {ActionSheetMenuList.map((menuList, index) =>(
-            <TouchableOpacity>
+            <TouchableOpacity key={index}>
           <View style={styles.profileScreenActionSheeetMenuContainer}>
             <Image source={menuList.icon} style={styles.profileScreenActionSheeetMenuIcon}/>
             <Text style={styles.profileScreenActionSheeetMenuTitle}>{menuList.menuTitle}</Text>

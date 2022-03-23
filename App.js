@@ -6,20 +6,25 @@
  * @flow strict-local
  */
 
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import HomeScreen from './screens/HomeScreen';
 import NewPostScreen from './screens/NewPostScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { NavigationContainer } from '@react-navigation/native'
+import { StatusBar } from 'react-native';
+import Navigation from './components/Navigation/Navigation';
+import StackNavigation from './components/Navigation/StackNavigation';
 
 const App = () => {
 
   return (
     <>
-      {/* <HomeScreen />  */}
-      {/* <NewPostScreen /> */}
+      <StatusBar
+        backgroundColor="transparent"
+        translucent={true}
+      />
       <NavigationContainer>
-      <ProfileScreen />
+        <Navigation />
       </NavigationContainer>
     </>
   );
