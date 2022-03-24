@@ -1,14 +1,14 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
 import FormikPostUploader from './FormikPostUploader'
 import { styles } from '../../styles'
 
 const AddNewPost = () => {
   return (
-    <View style={styles.container}>
+      <ScrollView style={styles.addNewPostScreenContainer}>
         <Header />
         <FormikPostUploader />
-    </View>
+      </ScrollView>
   )
 }
 

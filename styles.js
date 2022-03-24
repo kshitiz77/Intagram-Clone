@@ -194,10 +194,9 @@ export const styles = StyleSheet.create({
   // Home Screen Style Open //
 
   // Add New Post Screen Open //
-  addNewPostScreencontainer: {
-    flex: 1,
+  addNewPostScreenContainer: {
+    flex:1,
     backgroundColor: '#000',
-    paddingTop:20,
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
   },
   // Add New Post Screen Header Open//

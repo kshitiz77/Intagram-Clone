@@ -7,14 +7,19 @@
  */
 
 import React, { useEffect } from 'react';
-import HomeScreen from './screens/HomeScreen';
 import NewPostScreen from './screens/NewPostScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { NavigationContainer } from '@react-navigation/native'
-import { StatusBar } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 import BottomNavigation from './components/Navigation/BottomNavigation';
 import StackNavigation from './components/Navigation/StackNavigation';
 import AddNewPost from './components/newPost/AddNewPost';
+import HomeScreen from './screens/HomeScreen';
+
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+const Stack = createStackNavigator();
 
 const App = () => {
 
@@ -25,9 +30,11 @@ const App = () => {
         translucent={true}
       />
       <NavigationContainer>
-        <BottomNavigation />
+        <Stack.Navigator>
+          <Stack.Screen options={{ headerShown: false }} name="Home" component={BottomNavigation}/>
+          <Stack.Screen options={{ headerShown: false }} name='Post' component={AddNewPost}/>
+        </Stack.Navigator>
       </NavigationContainer>
-      {/* <AddNewPost /> */}
 
     </>
   );

@@ -3,6 +3,7 @@ import React, { createRef } from 'react'
 import { styles } from '../../styles'
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { Divider } from 'react-native-elements/dist/divider/Divider';
+import AddNewPost from '../newPost/AddNewPost';
 
 const ActionSheetAddPostMenu = [
   {
@@ -95,7 +96,7 @@ const Header = ({navigation}) => {
           </View>
           <Divider orientation='vertical'></Divider>
           {ActionSheetAddPostMenu.map((menuList, index) =>(
-            <TouchableOpacity key={index} onPress={() =>navigation.navigate('Search')}>
+            <TouchableOpacity key={index} onPress={() =>{navigation.push('Post')}}>
           <View style={styles.profileScreenActionSheeetMenuContainer}>
             <Image source={menuList.icon} style={styles.profileScreenActionSheeetMenuIcon}/>
             <Text style={styles.profileScreenActionSheeetMenuTitle}>{menuList.menuTitle}</Text>
