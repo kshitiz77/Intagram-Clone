@@ -21,7 +21,7 @@ const inactiveLikeIcon = require('../../assets/Love-Icon.png')
 const activeProfileIcon = require('../../assets/Iron-Man.jpg')
 
 
-const Navigation = () => {
+const BottomNavigation = () => {
   return (
     <BottomTab.Navigator initialRouteName="Home" screenOptions={({ route }) => ({
       tabBarShowLabel: false,
@@ -61,4 +61,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export default BottomNavigation

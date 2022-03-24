@@ -12,8 +12,9 @@ import NewPostScreen from './screens/NewPostScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'react-native';
-import Navigation from './components/Navigation/Navigation';
+import BottomNavigation from './components/Navigation/BottomNavigation';
 import StackNavigation from './components/Navigation/StackNavigation';
+import AddNewPost from './components/newPost/AddNewPost';
 
 const App = () => {
 
@@ -24,8 +25,10 @@ const App = () => {
         translucent={true}
       />
       <NavigationContainer>
-        <Navigation />
+        <BottomNavigation />
       </NavigationContainer>
+      {/* <AddNewPost /> */}
+
     </>
   );
 };

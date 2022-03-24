@@ -2,12 +2,12 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { styles } from '../../styles'
 
-const Header = () => {
+const Header = ({navigation}) => {
     return (
         <View style={styles.homeScreenHeaderContainer}>
                 <Image style={styles.appLogo} source={require('../../assets/header-logo.png')} />
             <View style={styles.homeScreenHeaderIconsContainer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                 <Image source={require('../../assets/add-icon.png')} style={styles.homeScreenHeaderIcon} />
             </TouchableOpacity>
             <TouchableOpacity>
