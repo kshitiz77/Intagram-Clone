@@ -96,7 +96,7 @@ const Header = ({navigation}) => {
           </View>
           <Divider orientation='vertical'></Divider>
           {ActionSheetAddPostMenu.map((menuList, index) =>(
-            <TouchableOpacity key={index} onPress={() =>{navigation.push('Post')}}>
+            <TouchableOpacity key={index} onPress={() =>{navigation.push(menuList.menuTitle)}}>
           <View style={styles.profileScreenActionSheeetMenuContainer}>
             <Image source={menuList.icon} style={styles.profileScreenActionSheeetMenuIcon}/>
             <Text style={styles.profileScreenActionSheeetMenuTitle}>{menuList.menuTitle}</Text>

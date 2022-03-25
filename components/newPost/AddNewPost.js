@@ -3,20 +3,20 @@ import React from 'react'
 import FormikPostUploader from './FormikPostUploader'
 import { styles } from '../../styles'
 
-const AddNewPost = () => {
+const AddNewPost = ({navigation}) => {
   return (
       <ScrollView style={styles.addNewPostScreenContainer}>
-        <Header />
+        <Header navigation={navigation}/>
         <FormikPostUploader />
       </ScrollView>
   )
 }
 
-const Header = () =>{
+const Header = ({navigation}) =>{
     return(
         <View style={styles.addNewPostScreenHeaderContainer}>
             <View style={styles.addNewPostScreenLeftSideHeader}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.goBack()}>
                 <Image source={require('../../assets/back.png')} style={styles.addNewPostScreenBackBtn}></Image>
             </TouchableOpacity>
             <Text style={styles.addNewPostScreenHeaderText}> New Post</Text>

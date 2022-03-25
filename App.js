@@ -16,10 +16,9 @@ import StackNavigation from './components/Navigation/StackNavigation';
 import AddNewPost from './components/newPost/AddNewPost';
 import HomeScreen from './screens/HomeScreen';
 
-import { createStackNavigator } from '@react-navigation/stack';
 
 
-const Stack = createStackNavigator();
+
 
 const App = () => {
 
@@ -30,10 +29,7 @@ const App = () => {
         translucent={true}
       />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen options={{ headerShown: false }} name="Home" component={BottomNavigation}/>
-          <Stack.Screen options={{ headerShown: false }} name='Post' component={AddNewPost}/>
-        </Stack.Navigator>
+        <StackNavigation />
       </NavigationContainer>
 
     </>

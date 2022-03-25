@@ -7,7 +7,7 @@ const Header = ({navigation}) => {
         <View style={styles.homeScreenHeaderContainer}>
                 <Image style={styles.appLogo} source={require('../../assets/header-logo.png')} />
             <View style={styles.homeScreenHeaderIconsContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+            <TouchableOpacity>
                 <Image source={require('../../assets/add-icon.png')} style={styles.homeScreenHeaderIcon} />
             </TouchableOpacity>
             <TouchableOpacity>
