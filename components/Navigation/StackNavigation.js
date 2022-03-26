@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName='LoginScreen'>
+    <Stack.Navigator initialRouteName='SignUpScreen'>
       <Stack.Screen options={{ headerShown: false }} name="SignUpScreen" component={SignUpScreen} />
       <Stack.Screen options={{ headerShown: false }} name="LoginScreen" component={LoginScreen} />
       <Stack.Screen options={{ headerShown: false }} name="HomeScreen" component={BottomNavigation} />

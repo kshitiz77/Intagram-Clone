@@ -629,7 +629,7 @@ loginScreenPasswordInputContainer: {
 },
 loginScreenPasswordInputField: {
     paddingHorizontal: 15,
-    color: '#fff'
+    color: '#fff',
 },
 loginScreenPasswordIconContainer: {
     marginHorizontal: 12
