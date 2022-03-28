@@ -1,10 +1,31 @@
 import { View, Text, Button, TouchableOpacity, SafeAreaView, StyleSheet, Image, TextInput } from 'react-native'
 import React, { useState } from 'react'
-import {styles} from '../styles'
+import { styles } from '../styles'
 
 const LoginScreen = ({ navigation }) => {
+    const [user, setUser] = useState({
+        email: '',
+        password: ''
+    })
+
+
     const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/passwordHide.png'));
     const [securePassword, setSecurePassword] = useState(true)
+
+    const submitUserDetails = (event) => {
+        if (user.email === "") {
+            console.log('Please Enter Your Email Address');
+        } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email))) {
+            console.log('Please Enter Your Correct Email Address');
+        } else if (user.password === "") {
+            console.log('Please Enter Your Password');
+        } else if (user.password.length < 6) {
+            console.log('Please Enter Correct Password');
+        } else {
+            console.log(user);
+            navigation.navigate('HomeScreen')
+        }
+    }
 
     const showPassword = () => {
         if (securePassword === true) {
@@ -17,22 +38,22 @@ const LoginScreen = ({ navigation }) => {
     }
     return (
         <SafeAreaView style={styles.loginScreenContainer}>
-        <TouchableOpacity>
-        <View style={styles.loginScreenCountryCodeContainer}>
-            <Text style={styles.loginScreenCountryCodeText}>English (United States)</Text>
-            <Image source={require('../assets/down-arrow.png')} style={styles.loginScreenDownArrowIcon} />
-        </View>
-    </TouchableOpacity>
-    <Image source={require('../assets/header-logo.png')} style={styles.loginScreenInstagramLogo} />
+            <TouchableOpacity>
+                <View style={styles.loginScreenCountryCodeContainer}>
+                    <Text style={styles.loginScreenCountryCodeText}>English (United States)</Text>
+                    <Image source={require('../assets/down-arrow.png')} style={styles.loginScreenDownArrowIcon} />
+                </View>
+            </TouchableOpacity>
+            <Image source={require('../assets/header-logo.png')} style={styles.loginScreenInstagramLogo} />
             <View style={styles.loginScreenBodyContainer}>
-                <TextInput style={styles.loginScreenEmailInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Email" />
+                <TextInput autoCapitalize='none' autoCorrect={false} value={user.email} style={styles.loginScreenEmailInputField} onChangeText={(event) => setUser({...user, email:event})} placeholderTextColor={'#ccc'} placeholder="Enter Your Email" />
                 <View style={styles.loginScreenPasswordInputContainer}>
-                    <TextInput secureTextEntry={securePassword} style={styles.loginScreenPasswordInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Password" />
+                    <TextInput autoCapitalize='none' maxLength={10} autoCorrect={false} value={user.password} onChangeText={(event) => setUser({...user, password:event})} secureTextEntry={securePassword} style={styles.loginScreenPasswordInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Password" />
                     <TouchableOpacity style={styles.loginScreenPasswordIconContainer} onPress={showPassword}>
                         <Image source={passwordHideIcon} style={styles.loginScreenPasswordIcon} />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.loginScreenBtnContainer}>
+                <TouchableOpacity style={styles.loginScreenBtnContainer} onPress={submitUserDetails}>
                     <Text style={styles.loginScreenBtnText}>Log in</Text>
                 </TouchableOpacity>
                 <View style={styles.loginScreenBottomContainer}>
@@ -53,7 +74,7 @@ const LoginScreen = ({ navigation }) => {
                     <Text style={styles.loginScreenSignupLinkText}>Sign up</Text>
                 </TouchableOpacity>
             </View>
-            </SafeAreaView>
+        </SafeAreaView>
     )
 }
 
