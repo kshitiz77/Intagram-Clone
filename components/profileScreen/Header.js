@@ -112,7 +112,7 @@ const Header = ({navigation}) => {
             </View>
           </View>
           {ActionSheetMenuList.map((menuList, index) =>(
-            <TouchableOpacity key={index}>
+            <TouchableOpacity key={index} onPress={() =>{navigation.push(menuList.menuTitle)}}>
           <View style={styles.profileScreenActionSheeetMenuContainer}>
             <Image source={menuList.icon} style={styles.profileScreenActionSheeetMenuIcon}/>
             <Text style={styles.profileScreenActionSheeetMenuTitle}>{menuList.menuTitle}</Text>

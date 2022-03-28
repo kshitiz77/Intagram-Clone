@@ -645,6 +645,14 @@ loginScreenBtnContainer: {
     marginVertical: 10,
     borderRadius: 5
 },
+
+loginBtnDisabled:{
+  justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#6ec5ff',
+    marginVertical: 10,
+    borderRadius: 5
+},
 loginScreenBtnText: {
     color: '#fff',
     paddingVertical: 12,
@@ -686,6 +694,11 @@ loginScreenBottomText: {
 },
 loginScreenSignupLinkText: {
     color: '#034efc',
+},
+activityIndicator:{
+  flex:1,
+  backgroundColor:'#000',
+  justifyContent:'center'
 }
   // Login Screen Style Close //
   //  Profile Screen Style Close//

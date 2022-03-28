@@ -1,29 +1,63 @@
-import { View, Text, Button, TouchableOpacity, SafeAreaView, StyleSheet, Image, TextInput } from 'react-native'
+import { View, Text, Button, TouchableOpacity, SafeAreaView, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
 import React, { useState } from 'react'
 import { styles } from '../styles'
+import auth from '@react-native-firebase/auth'
 
 const LoginScreen = ({ navigation }) => {
-    const [user, setUser] = useState({
-        email: '',
-        password: ''
-    })
-
-
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/passwordHide.png'));
-    const [securePassword, setSecurePassword] = useState(true)
+    const [securePassword, setSecurePassword] = useState(true);
+    const [loginBtn, setLoginBtn] = useState(true)
+    const [loading, setLoading] = useState(false)
 
-    const submitUserDetails = (event) => {
-        if (user.email === "") {
+
+    if(loading){
+        return(
+            <SafeAreaView style={styles.activityIndicator}>
+                <ActivityIndicator size="large" color="#fff" />
+            </SafeAreaView>
+        )
+    }
+
+    const handleEmailField = (email) =>{
+        setEmail(() => email);
+        if(email !== '' && password !== ''){
+            setLoginBtn(false)
+        }else{
+            setLoginBtn(true)
+        }
+    }
+
+    const handlePasswordField = (password) =>{
+        setPassword(() => password);
+        if( password !== '' && email !== ''){
+            setLoginBtn(false)
+        }else{
+            setLoginBtn(true)
+        }
+    }
+
+    const submitUserDetails = async (event) => {
+        setLoading(true)
+        if (email === "") {
             console.log('Please Enter Your Email Address');
-        } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email))) {
+        } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
             console.log('Please Enter Your Correct Email Address');
-        } else if (user.password === "") {
+        } else if (password === "") {
             console.log('Please Enter Your Password');
-        } else if (user.password.length < 6) {
+        } else if (password.length < 6) {
             console.log('Please Enter Correct Password');
         } else {
-            console.log(user);
-            navigation.navigate('HomeScreen')
+            try{
+                const result = await auth().signInWithEmailAndPassword(email, password)
+                    setLoading(false)
+                    navigation.navigate('HomeScreen')
+            }catch(error){
+                alert('Something went worng');
+                setLoading(false)
+                navigation.navigate('LoginScreen')
+            }
         }
     }
 
@@ -44,21 +78,21 @@ const LoginScreen = ({ navigation }) => {
                     <Image source={require('../assets/down-arrow.png')} style={styles.loginScreenDownArrowIcon} />
                 </View>
             </TouchableOpacity>
-            <Image source={require('../assets/header-logo.png')} style={styles.loginScreenInstagramLogo} />
             <View style={styles.loginScreenBodyContainer}>
-                <TextInput autoCapitalize='none' autoCorrect={false} value={user.email} style={styles.loginScreenEmailInputField} onChangeText={(event) => setUser({...user, email:event})} placeholderTextColor={'#ccc'} placeholder="Enter Your Email" />
+            <Image source={require('../assets/header-logo.png')} style={styles.loginScreenInstagramLogo} />
+                <TextInput autoCapitalize='none' autoCorrect={false} value={email} style={styles.loginScreenEmailInputField} onChangeText={(email) => handleEmailField(email)} placeholderTextColor={'#ccc'} placeholder="Enter Your Email" />
                 <View style={styles.loginScreenPasswordInputContainer}>
-                    <TextInput autoCapitalize='none' maxLength={10} autoCorrect={false} value={user.password} onChangeText={(event) => setUser({...user, password:event})} secureTextEntry={securePassword} style={styles.loginScreenPasswordInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Password" />
-                    <TouchableOpacity style={styles.loginScreenPasswordIconContainer} onPress={showPassword}>
+                    <TextInput autoCapitalize='none' maxLength={10} autoCorrect={false} value={password} onChangeText={(password) => handlePasswordField(password)} secureTextEntry={securePassword} style={styles.loginScreenPasswordInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Password" />
+                    <TouchableOpacity style={styles.loginScreenPasswordIconContainer} onPress={showPassword} >
                         <Image source={passwordHideIcon} style={styles.loginScreenPasswordIcon} />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.loginScreenBtnContainer} onPress={submitUserDetails}>
+                <TouchableOpacity style={loginBtn ? styles.loginBtnDisabled : styles.loginScreenBtnContainer} onPress={submitUserDetails} disabled={loginBtn}>
                     <Text style={styles.loginScreenBtnText}>Log in</Text>
                 </TouchableOpacity>
                 <View style={styles.loginScreenBottomContainer}>
                     <Text style={styles.loginScreenBottomText}>Forgot your login details? </Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate()}>
                         <Text style={styles.loginScreenSignupLinkText}>Get Help logging in</Text>
                     </TouchableOpacity>
                 </View>
