@@ -638,6 +638,7 @@ loginScreenPasswordIcon: {
     height: 20,
 },
 loginScreenBtnContainer: {
+    flexDirection:'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0095F6',
@@ -646,6 +647,7 @@ loginScreenBtnContainer: {
 },
 
 loginBtnDisabled:{
+  flexDirection:'row',
   justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#6ec5ff',
@@ -656,7 +658,7 @@ loginScreenBtnText: {
     color: '#fff',
     paddingVertical: 12,
     fontWeight: '700',
-    fontSize: 16
+    fontSize: 16,
 },
 loginScreenOrText: {
     color: '#ccc',

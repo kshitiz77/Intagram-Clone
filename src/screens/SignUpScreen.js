@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { styles } from '../styles/styles'
 import auth from '@react-native-firebase/auth'
 import firestore from '@react-native-firebase/firestore'
+import { FBLogin } from '../components/common/AuthBtn'
+import AuthBtn from '../components/common/AuthBtn'
 
 const SignUpScreen = ({ navigation }) => {
     const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/images/passwordHide.png'));
@@ -107,14 +109,9 @@ const SignUpScreen = ({ navigation }) => {
                         <Image source={passwordHideIcon} style={styles.loginScreenPasswordIcon} />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={signupBtn ? styles.loginBtnDisabled : styles.loginScreenBtnContainer} onPress={submitUserDetails} disabled={signupBtn}>
-                    <Text style={styles.loginScreenBtnText}>Sign up</Text>
-                </TouchableOpacity>
+                <AuthBtn submitUserDetails={submitUserDetails} loginBtn={signupBtn} title="Sign up"/>
                 <Text style={styles.loginScreenOrText}>OR</Text>
-                <TouchableOpacity style={styles.loginScreenFBLoginContainer}>
-                    <Image source={require('../assets/images/fb-logo.png')} style={styles.loginScreenFBLogo} />
-                    <Text style={styles.loginScreenFBLoginText}>Sign up With Facebook</Text>
-                </TouchableOpacity>
+                <FBLogin title="Sign up with Facebook"/>
             </View>
             <View style={styles.loginScreenBottomContainer}>
                 <Text style={styles.loginScreenBottomText}>You have an account? </Text>

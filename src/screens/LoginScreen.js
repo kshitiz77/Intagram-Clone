@@ -2,6 +2,9 @@ import { View, Text, Button, TouchableOpacity, SafeAreaView, StyleSheet, Image, 
 import React, { useState } from 'react'
 import { styles } from '../styles/styles'
 import auth from '@react-native-firebase/auth'
+import AuthBtn from '../components/common/AuthBtn'
+import { FBLogin } from '../components/common/AuthBtn'
+
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
@@ -87,9 +90,7 @@ const LoginScreen = ({ navigation }) => {
                         <Image source={passwordHideIcon} style={styles.loginScreenPasswordIcon} />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={loginBtn ? styles.loginBtnDisabled : styles.loginScreenBtnContainer} onPress={submitUserDetails} disabled={loginBtn}>
-                    <Text style={styles.loginScreenBtnText}>Log in</Text>
-                </TouchableOpacity>
+                <AuthBtn submitUserDetails={submitUserDetails} loginBtn={loginBtn} title="Log in"/>
                 <View style={styles.loginScreenBottomContainer}>
                     <Text style={styles.loginScreenBottomText}>Forgot your login details? </Text>
                     <TouchableOpacity onPress={() => navigation.navigate()}>
@@ -97,10 +98,7 @@ const LoginScreen = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.loginScreenOrText}>OR</Text>
-                <TouchableOpacity style={styles.loginScreenFBLoginContainer}>
-                    <Image source={require('../assets/images/fb-logo.png')} style={styles.loginScreenFBLogo} />
-                    <Text style={styles.loginScreenFBLoginText}>Login With Facebook</Text>
-                </TouchableOpacity>
+                <FBLogin title="Login With Facebook"/>
             </View>
             <View style={styles.loginScreenBottomContainer}>
                 <Text style={styles.loginScreenBottomText}>Don't have an account? </Text>
