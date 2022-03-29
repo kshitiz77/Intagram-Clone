@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'react-native';
-import StackNavigation from './components/Navigation/StackNavigation';
+import StackNavigation from './src/navigation/StackNavigation';
 
 const App = () => {
 

@@ -2,8 +2,8 @@ export const YourPostObj = [
     {
         place:'Lord of The Drink',
         postImg : {
-            img_1 :require('../assets/Iron-Man-Img.jpg'),
-            img_2 : require('../assets/Hulk.jpg')
+            img_1 :require('../assets/images/Iron-Man-Img.jpg'),
+            img_2 : require('../assets/images/Hulk.jpg')
         },
         likes : 101,
         caption : 'Iron Man is a superhero appearing in American comic books published by Marvel Comics.',
@@ -19,8 +19,8 @@ export const YourPostObj = [
     {
         place:'Lord of The Drink',
         postImg : {
-            img_1 :require('../assets/Hawkeye.jpg'),
-            img_2 : require('../assets/Captain-America.jpg')
+            img_1 :require('../assets/images/Hawkeye.jpg'),
+            img_2 : require('../assets/images/Captain-America.jpg')
         },
         likes : 101,
         caption : 'Iron Man is a superhero appearing in American comic books published by Marvel Comics.',
@@ -36,8 +36,8 @@ export const YourPostObj = [
     {
         place:'Lord of The Drink',
         postImg : {
-            img_1 :require('../assets/Captain-America.jpg'),
-            img_2 : require('../assets/Captain-America.jpg')
+            img_1 :require('../assets/images/Captain-America.jpg'),
+            img_2 : require('../assets/images/Captain-America.jpg')
         },
         likes : 101,
         caption : 'Iron Man is a superhero appearing in American comic books published by Marvel Comics.',
@@ -53,8 +53,8 @@ export const YourPostObj = [
     {
         place:'Lord of The Drink',
         postImg : {
-            img_1 :require('../assets/Thor.jpg'),
-            img_2 : require('../assets/Captain-America.jpg')
+            img_1 :require('../assets/images/Thor.jpg'),
+            img_2 : require('../assets/images/Captain-America.jpg')
         },
         likes : 101,
         caption : 'Iron Man is a superhero appearing in American comic books published by Marvel Comics.',

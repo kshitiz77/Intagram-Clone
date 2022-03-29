@@ -1,64 +1,64 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React, { createRef } from 'react'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { Divider } from 'react-native-elements/dist/divider/Divider';
 import AddNewPost from '../newPost/AddNewPost';
 
 const ActionSheetAddPostMenu = [
   {
-    icon: require('../../assets/activeGrid.png'),
+    icon: require('../../assets/images/activeGrid.png'),
     menuTitle: 'Post'
   },
   {
-    icon: require('../../assets/Inactive-Reel-Icon.png'),
+    icon: require('../../assets/images/Inactive-Reel-Icon.png'),
     menuTitle: 'Reel'
   },
   {
-    icon: require('../../assets/instagram-stories.png'),
+    icon: require('../../assets/images/instagram-stories.png'),
     menuTitle: 'Story'
   },
   {
-    icon: require('../../assets/story-highlight.png'),
+    icon: require('../../assets/images/story-highlight.png'),
     menuTitle: 'Story Highlight'
   },
   {
-    icon: require('../../assets/live.png'),
+    icon: require('../../assets/images/live.png'),
     menuTitle: 'Live'
   },
   {
-    icon: require('../../assets/travel-guide.png'),
+    icon: require('../../assets/images/travel-guide.png'),
     menuTitle: 'Guide'
   }
 ]
 
 const ActionSheetMenuList = [
   {
-    icon: require('../../assets/setting.png'),
+    icon: require('../../assets/images/setting.png'),
     menuTitle: 'Settings'
   },
   {
-    icon: require('../../assets/Archive.png'),
+    icon: require('../../assets/images/Archive.png'),
     menuTitle: 'Archive'
   },
   {
-    icon: require('../../assets/clock.png'),
+    icon: require('../../assets/images/clock.png'),
     menuTitle: 'Your activity'
   },
   {
-    icon: require('../../assets/qr-code.png'),
+    icon: require('../../assets/images/qr-code.png'),
     menuTitle: 'QR Code'
   },
   {
-    icon: require('../../assets/save.png'),
+    icon: require('../../assets/images/save.png'),
     menuTitle: 'Saved'
   },
   {
-    icon: require('../../assets/save.png'),
+    icon: require('../../assets/images/save.png'),
     menuTitle: 'Close Friends'
   },
   {
-    icon: require('../../assets/covid-icon.png'),
+    icon: require('../../assets/images/covid-icon.png'),
     menuTitle: 'COVID-19 Information Center'
   },
 ]
@@ -78,12 +78,12 @@ const Header = ({navigation}) => {
           <TouchableOpacity onPress={() => {
             actionSheetPostMenuRef.current?.setModalVisible();
           }}>
-            <Image style={styles.profileScreenHeaderAddPostIcon} source={require('../../assets/add-icon.png')} />
+            <Image style={styles.profileScreenHeaderAddPostIcon} source={require('../../assets/images/add-icon.png')} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {
             actionSheetMenuRef.current?.setModalVisible();
           }}>
-            <Image style={styles.profileScreenHeaderMenuIcon} source={require('../../assets/menu.png')} />
+            <Image style={styles.profileScreenHeaderMenuIcon} source={require('../../assets/images/menu.png')} />
           </TouchableOpacity>
         </View>
       </View>

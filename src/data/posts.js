@@ -2,7 +2,7 @@ import { USERS } from "./users";
 
 export const POSTS = [
     {
-        postImg : require('../assets/Iron-Man-Img.jpg'),
+        postImg : require('../assets/images/Iron-Man-Img.jpg'),
         user : USERS[0].user,
         profileImg : USERS[0].img,
         likes : 101,
@@ -17,7 +17,7 @@ export const POSTS = [
         ],
     },
     {
-        postImg : require('../assets/Thor.jpg'),
+        postImg : require('../assets/images/Thor.jpg'),
         user : USERS[1].user,
         profileImg : USERS[1].img,
         likes : 201,

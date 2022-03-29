@@ -1,11 +1,11 @@
 import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput, ActivityIndicator } from 'react-native'
 import React, { useState } from 'react'
-import { styles } from '../styles'
+import { styles } from '../styles/styles'
 import auth from '@react-native-firebase/auth'
 import firestore from '@react-native-firebase/firestore'
 
 const SignUpScreen = ({ navigation }) => {
-    const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/passwordHide.png'));
+    const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/images/passwordHide.png'));
     const [securePassword, setSecurePassword] = useState(true)
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('')
@@ -82,10 +82,10 @@ const SignUpScreen = ({ navigation }) => {
     const showPassword = () => {
         if (securePassword === true) {
             setSecurePassword(false);
-            setPasswordHideIcon(require('../assets/passwordShow.png'));
+            setPasswordHideIcon(require('../assets/images/passwordShow.png'));
         } else {
             setSecurePassword(true);
-            setPasswordHideIcon(require('../assets/passwordHide.png'));
+            setPasswordHideIcon(require('../assets/images/passwordHide.png'));
         }
     }
 
@@ -94,11 +94,11 @@ const SignUpScreen = ({ navigation }) => {
             <TouchableOpacity>
                 <View style={styles.loginScreenCountryCodeContainer}>
                     <Text style={styles.loginScreenCountryCodeText}>English (United States)</Text>
-                    <Image source={require('../assets/down-arrow.png')} style={styles.loginScreenDownArrowIcon} />
+                    <Image source={require('../assets/images/down-arrow.png')} style={styles.loginScreenDownArrowIcon} />
                 </View>
             </TouchableOpacity>
             <View style={styles.loginScreenBodyContainer}>
-                <Image source={require('../assets/header-logo.png')} style={styles.loginScreenInstagramLogo} />
+                <Image source={require('../assets/images/header-logo.png')} style={styles.loginScreenInstagramLogo} />
                 <TextInput autoCorrect={false} autoCapitalize='none' name='userName' value={userName} onChangeText={(userName) => handleUserNameField(userName)} style={styles.loginScreenEmailInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Username" />
                 <TextInput autoCorrect={false} autoCapitalize='none' name='email' value={email} onChangeText={(email) => handleEmailField(email)} keyboardType="email-address" style={styles.loginScreenEmailInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Email" />
                 <View style={styles.loginScreenPasswordInputContainer}>
@@ -112,7 +112,7 @@ const SignUpScreen = ({ navigation }) => {
                 </TouchableOpacity>
                 <Text style={styles.loginScreenOrText}>OR</Text>
                 <TouchableOpacity style={styles.loginScreenFBLoginContainer}>
-                    <Image source={require('../assets/fb-logo.png')} style={styles.loginScreenFBLogo} />
+                    <Image source={require('../assets/images/fb-logo.png')} style={styles.loginScreenFBLogo} />
                     <Text style={styles.loginScreenFBLoginText}>Sign up With Facebook</Text>
                 </TouchableOpacity>
             </View>

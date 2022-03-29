@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
 import FormikPostUploader from './FormikPostUploader'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 
 const AddNewPost = ({navigation}) => {
   return (
@@ -17,12 +17,12 @@ const Header = ({navigation}) =>{
         <View style={styles.addNewPostScreenHeaderContainer}>
             <View style={styles.addNewPostScreenLeftSideHeader}>
             <TouchableOpacity onPress={()=>navigation.goBack()}>
-                <Image source={require('../../assets/back.png')} style={styles.addNewPostScreenBackBtn}></Image>
+                <Image source={require('../../assets/images/back.png')} style={styles.addNewPostScreenBackBtn}></Image>
             </TouchableOpacity>
             <Text style={styles.addNewPostScreenHeaderText}> New Post</Text>
             </View>
             <TouchableOpacity>
-           <Image source={require('../../assets/check.png')} style={styles.addNewPostScreenCheckIcon}/>
+           <Image source={require('../../assets/images/check.png')} style={styles.addNewPostScreenCheckIcon}/>
             </TouchableOpacity>
         </View>
     )

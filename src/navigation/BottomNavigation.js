@@ -1,24 +1,24 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeScreen from '../../screens/HomeScreen';
-import SearchScreen from '../../screens/SearchScreen'
-import ReelScreen from '../../screens/ReelScreen'
-import ActivityScreen from '../../screens/ActivityScreen'
-import ProfileScreen from '../../screens/ProfileScreen';
-import { styles } from '../../styles';
+import HomeScreen from '../screens/HomeScreen';
+import SearchScreen from '../screens/SearchScreen'
+import ReelScreen from '../screens/ReelScreen'
+import ActivityScreen from '../screens/ActivityScreen'
+import ProfileScreen from '../screens/ProfileScreen';
+import { styles } from '../styles/styles'
 
 const BottomTab = createBottomTabNavigator();
 
-const activeHomeIcon = require('../../assets/Active-Home-Icon.png')
-const inactiveHomeIcon = require('../../assets/Inactive-Home-Icon.png')
-const activeSearchIcon = require('../../assets/Active-Search-Icon.png')
-const inactiveSearchIcon = require('../../assets/Inactive-Search-Icon.png')
-const activeReelIcon = require('../../assets/Active-Reel-Icon.png')
-const inactiveReelIcon = require('../../assets/Inactive-Reel-Icon.png')
-const activeLikeIcon = require('../../assets/Active-Like-Icon.png')
-const inactiveLikeIcon = require('../../assets/Love-Icon.png')
-const activeProfileIcon = require('../../assets/Iron-Man.jpg')
+const activeHomeIcon = require('../assets/images/Active-Home-Icon.png')
+const inactiveHomeIcon = require('../assets/images/Inactive-Home-Icon.png')
+const activeSearchIcon = require('../assets/images/Active-Search-Icon.png')
+const inactiveSearchIcon = require('../assets/images/Inactive-Search-Icon.png')
+const activeReelIcon = require('../assets/images/Active-Reel-Icon.png')
+const inactiveReelIcon = require('../assets/images/Inactive-Reel-Icon.png')
+const activeLikeIcon = require('../assets/images/Active-Like-Icon.png')
+const inactiveLikeIcon = require('../assets/images/Love-Icon.png')
+const activeProfileIcon = require('../assets/images/Iron-Man.jpg')
 
 
 const BottomNavigation = () => {

@@ -3,13 +3,13 @@ import React from 'react'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import YourPosts from './YourPosts'
 import TagPosts from './TagPosts'
-import { styles } from '../../styles';
+import { styles } from '../../styles/styles';
 
 const Tab = createMaterialTopTabNavigator();
-const activeYourPostIcon = require('../../assets/activeGrid.png');
-const inactiveYourPostIcon = require('../../assets/inactiveGrid.png');
-const activeTagUser = require('../../assets/activeTagIcon.png');
-const inactiveTagUser = require('../../assets/inactiveTagIcon.png');
+const activeYourPostIcon = require('../../assets/images/activeGrid.png');
+const inactiveYourPostIcon = require('../../assets/images/inactiveGrid.png');
+const activeTagUser = require('../../assets/images/activeTagIcon.png');
+const inactiveTagUser = require('../../assets/images/inactiveTagIcon.png');
 
 const PostScreenNavigation = () => {
   return (

@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 
 const UserDetails = ({handleShowDiscoverPeople}) => {
     return (
@@ -8,7 +8,7 @@ const UserDetails = ({handleShowDiscoverPeople}) => {
             <View style={styles.userDetailsTopContainer}>
                 <TouchableOpacity>
                     <View style={styles.userDetailsLeftSideContainer}>
-                        <Image style={styles.userDetailsUserImage} source={require('../../assets/Iron-Man.jpg')} />
+                        <Image style={styles.userDetailsUserImage} source={require('../../assets/images/Iron-Man.jpg')} />
                     </View>
                 </TouchableOpacity>
                 <View style={styles.userDetailsRightSideContainer}>
@@ -41,7 +41,7 @@ const UserDetails = ({handleShowDiscoverPeople}) => {
                     <Text style={styles.userDetailsEditProfileText}>Edit profile</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.userDetailsAddFriendIconContainer} onPress={handleShowDiscoverPeople}>
-                    <Image style={styles.userDetailsAddFriendIcon} source={require('../../assets/add-user.png')} />
+                    <Image style={styles.userDetailsAddFriendIcon} source={require('../../assets/images/add-user.png')} />
             </TouchableOpacity>
             </View>
         </View>

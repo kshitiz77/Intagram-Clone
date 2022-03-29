@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 
 const TagPosts = () => {
   return (
     <View style={styles.tagPostsContainer}>
       <View style={styles.tagPostIconContainer}>
-        <Image source={require('../../assets/activeTagIcon.png')} style={styles.tagPostIcon} />
+        <Image source={require('../../assets/images/activeTagIcon.png')} style={styles.tagPostIcon} />
       </View>
       <View style={styles.tagPostTitleContainer}>
         <Text style={styles.tagPostTitle}>Photos and</Text>

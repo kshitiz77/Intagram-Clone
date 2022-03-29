@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { YourPostObj } from '../../data/yourPostObj'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 const YourPosts = () => {
   return (
       <View style={styles.yourPostsContainer}>

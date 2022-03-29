@@ -1,17 +1,17 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import AddNewReel from '../newReelPost/AddNewReel';
-import AddNewStory from '../addStoryPost/AddNewStory';
-import AddNewStoryHighlight from '../addStoryHighlight/AddNewStoryHighlight';
-import LoginScreen from '../../screens/LoginScreen';
-import GoLive from '../goLive/GoLive';
-import Guide from '../guide/Guide';
-import AddNewPost from '../newPost/AddNewPost'
+import AddNewReel from '../components/newReelPost/AddNewReel';
+import AddNewStory from '../components/addStoryPost/AddNewStory';
+import AddNewStoryHighlight from '../components/addStoryHighlight/AddNewStoryHighlight';
+import LoginScreen from '../screens/LoginScreen';
+import GoLive from '../components/goLive/GoLive';
+import Guide from '../components/guide/Guide';
+import AddNewPost from '../components/newPost/AddNewPost'
 import BottomNavigation from './BottomNavigation';
-import SignUpScreen from '../../screens/SignUpScreen';
+import SignUpScreen from '../screens/SignUpScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import Settings from '../settings/Settings';
-import ResetPasswordScreen from '../../screens/ResetPasswordScreen';
+import Settings from '../components/settings/Settings';
+import ResetPasswordScreen from '../screens/ResetPasswordScreen';
 
 const Stack = createStackNavigator();
 

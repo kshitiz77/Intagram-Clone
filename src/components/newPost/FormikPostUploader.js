@@ -4,9 +4,9 @@ import * as Yup from 'yup'
 import { Formik } from 'formik'
 import { LOCATION } from '../../data/location'
 import { MUSIC_LIST } from '../../data/music'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 
-const PlaceholderImg = require('../../assets/instagram-icon.png')
+const PlaceholderImg = require('../../assets/images/instagram-icon.png')
 
 import { USERS } from '../../data/users'
 import { Divider } from 'react-native-elements/dist/divider/Divider'
@@ -36,7 +36,7 @@ const FormikPostUploader = () => {
                 return <>
                     <View style={styles.addNewPostContainer}>
                         <View style={styles.addNewPostLeftContainer}>
-                            <Image source={require('../../assets/Iron-Man.jpg')} style={styles.addNewPostUserImg} />
+                            <Image source={require('../../assets/images/Iron-Man.jpg')} style={styles.addNewPostUserImg} />
                             <TextInput
                                 placeholder='Write a caption....'
                                 placeholderTextColor='white'
@@ -90,7 +90,7 @@ const FormikPostUploader = () => {
                         <Text style={styles.addNewPostAlsoPostToText}>Also post to</Text>
                         <View style={styles.addNewPostPostOnFacebookContainer}>
                             <View style={styles.addNewPostPostOnFacebookLeftSideContainer}>
-                                <Image source={require('../../assets/Iron-Man.jpg')} style={styles.addNewPostUserImg} />
+                                <Image source={require('../../assets/images/Iron-Man.jpg')} style={styles.addNewPostUserImg} />
                                 <View style={styles.addNewPostPostFacebookTextContainer}>
                                     <Text style={styles.addNewPostFacebookText}>Facebook</Text>
                                     <Text style={styles.addNewPostUserNameText}>Iron Man</Text>

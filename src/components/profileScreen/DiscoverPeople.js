@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, FlatList } from 'react-native'
 import React from 'react'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 import { USERS } from '../../data/users'
 
 const DiscoverPeople = () => {
@@ -23,7 +23,7 @@ const DiscoverPeople = () => {
             <View style={styles.discoverPeopleBodyContainer}>
               <View style={styles.discoverPeopleUserImageContainer}>
                 <Image source={element.item.img} style={styles.discoverPeopleUsersImage} />
-                <Image source={require('../../assets/cancel.png')} style={styles.discoverPeopleCloseIcon}/>
+                <Image source={require('../../assets/images/cancel.png')} style={styles.discoverPeopleCloseIcon}/>
               </View>
               <TouchableOpacity style={styles.discoverPeopleNameContainer}>
               <Text style={styles.discoverPeopleName}>{element.item.userName}</Text>

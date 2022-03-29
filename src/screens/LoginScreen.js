@@ -1,12 +1,12 @@
 import { View, Text, Button, TouchableOpacity, SafeAreaView, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
 import React, { useState } from 'react'
-import { styles } from '../styles'
+import { styles } from '../styles/styles'
 import auth from '@react-native-firebase/auth'
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/passwordHide.png'));
+    const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/images/passwordHide.png'));
     const [securePassword, setSecurePassword] = useState(true);
     const [loginBtn, setLoginBtn] = useState(true)
     const [loading, setLoading] = useState(false)
@@ -64,10 +64,10 @@ const LoginScreen = ({ navigation }) => {
     const showPassword = () => {
         if (securePassword === true) {
             setSecurePassword(false);
-            setPasswordHideIcon(require('../assets/passwordShow.png'));
+            setPasswordHideIcon(require('../assets/images/passwordShow.png'));
         } else {
             setSecurePassword(true);
-            setPasswordHideIcon(require('../assets/passwordHide.png'));
+            setPasswordHideIcon(require('../assets/images/passwordHide.png'));
         }
     }
     return (
@@ -75,11 +75,11 @@ const LoginScreen = ({ navigation }) => {
             <TouchableOpacity>
                 <View style={styles.loginScreenCountryCodeContainer}>
                     <Text style={styles.loginScreenCountryCodeText}>English (United States)</Text>
-                    <Image source={require('../assets/down-arrow.png')} style={styles.loginScreenDownArrowIcon} />
+                    <Image source={require('../assets/images/down-arrow.png')} style={styles.loginScreenDownArrowIcon} />
                 </View>
             </TouchableOpacity>
             <View style={styles.loginScreenBodyContainer}>
-            <Image source={require('../assets/header-logo.png')} style={styles.loginScreenInstagramLogo} />
+            <Image source={require('../assets/images/header-logo.png')} style={styles.loginScreenInstagramLogo} />
                 <TextInput autoCapitalize='none' autoCorrect={false} value={email} style={styles.loginScreenEmailInputField} onChangeText={(email) => handleEmailField(email)} placeholderTextColor={'#ccc'} placeholder="Enter Your Email" />
                 <View style={styles.loginScreenPasswordInputContainer}>
                     <TextInput autoCapitalize='none' maxLength={10} autoCorrect={false} value={password} onChangeText={(password) => handlePasswordField(password)} secureTextEntry={securePassword} style={styles.loginScreenPasswordInputField} placeholderTextColor={'#ccc'} placeholder="Enter Your Password" />
@@ -98,7 +98,7 @@ const LoginScreen = ({ navigation }) => {
                 </View>
                 <Text style={styles.loginScreenOrText}>OR</Text>
                 <TouchableOpacity style={styles.loginScreenFBLoginContainer}>
-                    <Image source={require('../assets/fb-logo.png')} style={styles.loginScreenFBLogo} />
+                    <Image source={require('../assets/images/fb-logo.png')} style={styles.loginScreenFBLogo} />
                     <Text style={styles.loginScreenFBLoginText}>Login With Facebook</Text>
                 </TouchableOpacity>
             </View>

@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native'
 import React from 'react'
-import { styles } from '../../styles';
+import { styles } from '../../styles/styles';
 
 const Posts = ({ posts }) => {
     return (
@@ -23,7 +23,7 @@ const PostHeader = ({ posts }) => (
             </View>
         </TouchableOpacity>
         <TouchableOpacity>
-            <Image source={require('../../assets/more.png')} style={styles.homeScreenPostMoreIcon}/>
+            <Image source={require('../../assets/images/more.png')} style={styles.homeScreenPostMoreIcon}/>
         </TouchableOpacity>
     </View>
 )
@@ -41,18 +41,18 @@ const PostIcon = () => {
         <View style={styles.homeScreenPostIconContainer}>
             <View style={styles.homeScreenPostIconLeftSide}>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Love-Icon.png')} style={styles.homeScreenPostIcon} />
+                    <Image source={require('../../assets/images/Love-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Comment-Icon.png')} style={styles.homeScreenPostIcon} />
+                    <Image source={require('../../assets/images/Comment-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Message-Icon.png')} style={styles.homeScreenPostIcon} />
+                    <Image source={require('../../assets/images/Message-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
             </View>
             <View>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/Save-Icon.png')} style={styles.homeScreenPostIcon} />
+                    <Image source={require('../../assets/images/Save-Icon.png')} style={styles.homeScreenPostIcon} />
                 </TouchableOpacity>
             </View>
         </View>

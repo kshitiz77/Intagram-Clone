@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
   homeScreenContainer: {
     backgroundColor: 'black',
     flex: 1,
-    paddingTop:20,
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 

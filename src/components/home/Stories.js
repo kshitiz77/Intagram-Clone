@@ -2,7 +2,7 @@ import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from 'rea
 import React from 'react'
 import { USERS } from '../../data/users'
 import { Divider } from 'react-native-elements/dist/divider/Divider'
-import { styles } from '../../styles'
+import { styles } from '../../styles/styles'
 
 const Stories = () => {
   return (
@@ -10,7 +10,7 @@ const Stories = () => {
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <TouchableOpacity >
           <View style={styles.homeScreenStoriesContainer}>
-            <Image source={require('../../assets/Iron-Man.jpg')} style={styles.homeScreenAddStory} />
+            <Image source={require('../../assets/images/Iron-Man.jpg')} style={styles.homeScreenAddStory} />
             <View style={styles.homeScreenAddStoryBtn}>
               <Text style={styles.homeScreenAddStoryText}>+</Text>
             </View>
