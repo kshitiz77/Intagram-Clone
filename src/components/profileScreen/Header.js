@@ -4,6 +4,7 @@ import { styles } from '../../styles/styles'
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { Divider } from 'react-native-elements/dist/divider/Divider';
 import AddNewPost from '../newPost/AddNewPost';
+import {launchImageLibrary, ImageLibraryOptions} from 'react-native-image-picker'
 
 const ActionSheetAddPostMenu = [
   {
@@ -66,7 +67,22 @@ const actionSheetPostMenuRef  = createRef();
 const actionSheetMenuRef = createRef();
 
 const Header = ({navigation}) => {
-
+  
+  const selectPost = (event, title) =>{
+    if(title === 'Post'){
+      const options:ImageLibraryOptions ={
+        mediaType: 'photo, video',
+        quality: 0.8
+      }
+      launchImageLibrary(options, (response) =>{
+        const image = response.assets[0].uri
+        
+        navigation.navigate(title)
+      })
+    }else{
+      return null;
+    }
+  }
 
   return (
     <>
@@ -96,7 +112,8 @@ const Header = ({navigation}) => {
           </View>
           <Divider orientation='vertical'></Divider>
           {ActionSheetAddPostMenu.map((menuList, index) =>(
-            <TouchableOpacity key={index} onPress={() =>{navigation.push(menuList.menuTitle)}}>
+            
+            <TouchableOpacity key={index} onPress={(event) => selectPost(event, menuList.menuTitle)}>
           <View style={styles.profileScreenActionSheeetMenuContainer}>
             <Image source={menuList.icon} style={styles.profileScreenActionSheeetMenuIcon}/>
             <Text style={styles.profileScreenActionSheeetMenuTitle}>{menuList.menuTitle}</Text>
