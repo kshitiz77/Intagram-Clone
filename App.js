@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'react-native';
-import StackNavigation from './src/navigation/StackNavigation';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import Routes from './src/navigation/Routes';
 
 const App = () => {
 
@@ -11,9 +12,9 @@ const App = () => {
         backgroundColor="transparent"
         translucent={true}
       />
-      <NavigationContainer>
-        <StackNavigation />
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <Routes />
+      </SafeAreaProvider>
 
     </>
   );
