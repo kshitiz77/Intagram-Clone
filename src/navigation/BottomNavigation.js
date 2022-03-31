@@ -51,11 +51,37 @@ const BottomNavigation = () => {
         borderBottomColor: '#fff',
       }
     })}>
-      <BottomTab.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
-      <BottomTab.Screen options={{ headerShown: false }} name="Search" component={SearchScreen} />
-      <BottomTab.Screen options={{ headerShown: false }} name="Reel" component={ReelScreen} />
-      <BottomTab.Screen options={{ headerShown: false }} name="Like" component={ActivityScreen} />
-      <BottomTab.Screen options={{ headerShown: false }} name="Profile" component={ProfileScreen} />
+
+      <BottomTab.Screen
+        options={{ headerShown: false }}
+        name="Home"
+        component={HomeScreen}
+      />
+
+      <BottomTab.Screen
+        options={{ headerShown: false }}
+        name="Search"
+        component={SearchScreen}
+      />
+
+      <BottomTab.Screen
+        options={{ headerShown: false }}
+        name="Reel"
+        component={ReelScreen}
+      />
+
+      <BottomTab.Screen
+        options={{ headerShown: false }}
+        name="Like"
+        component={ActivityScreen}
+      />
+
+      <BottomTab.Screen
+        options={{ headerShown: false }}
+        name="Profile"
+        component={ProfileScreen}
+      />
+
 
     </BottomTab.Navigator>
   )

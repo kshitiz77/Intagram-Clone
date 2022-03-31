@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
 import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen'
 
 import navigationStrings from './navigationStrings';
 
-export default function (Stack) {
+export default function (Stack, screen) {
     return (
         <>
             <Stack.Screen

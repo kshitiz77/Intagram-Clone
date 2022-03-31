@@ -14,13 +14,15 @@ import ResetPasswordScreen from '../screens/ResetPasswordScreen';
 
 const Stack = createStackNavigator();
 
+console.log(navigationStrings.HOME)
 const HomeStack = () => {
   return (
     <Stack.Navigator initialRouteName={navigationStrings.HOME}>
+      
       <Stack.Screen
         name={navigationStrings.HOME}
         component={BottomNavigation}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         options={{ headerShown: false }}
