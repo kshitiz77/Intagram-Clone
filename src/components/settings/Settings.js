@@ -1,7 +1,10 @@
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { logout } from '../../redux/actions/auth'
 
 const Settings = ({navigation}) => {
+  const dispatch = useDispatch()
   return (
     <SafeAreaView style={styles.settingsScreenContainer}>
       <View style={styles.settingScreenLoginsContainer}>
@@ -9,7 +12,7 @@ const Settings = ({navigation}) => {
         <TouchableOpacity>
           <Text style={styles.settingScreenLoginsLinkText}>Add or switch accounts</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+        <TouchableOpacity onPress={() => dispatch(logout())}>
           <Text style={styles.settingScreenLoginsLinkText}>Log out _iron_man__</Text>
         </TouchableOpacity>
       </View>

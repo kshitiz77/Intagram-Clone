@@ -4,9 +4,11 @@ import { styles } from '../styles/styles'
 import auth from '@react-native-firebase/auth'
 import AuthBtn from '../components/common/AuthBtn'
 import { FBLogin } from '../components/common/AuthBtn'
-
+import { useDispatch } from 'react-redux'
+import { login } from '../redux/actions/auth'
 
 const LoginScreen = ({ navigation}) => {
+    const dispatch = useDispatch()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordHideIcon, setPasswordHideIcon] = useState(require('../assets/images/passwordHide.png'));
@@ -55,7 +57,7 @@ const LoginScreen = ({ navigation}) => {
             try{
                 const result = await auth().signInWithEmailAndPassword(email, password)
                     setLoading(false)
-                    // setScreen(true)
+                    dispatch(login())
             }catch(error){
                 alert('Something went worng');
                 setLoading(false)
