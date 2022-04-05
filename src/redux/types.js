@@ -2,4 +2,6 @@ export default {
     LOGIN: 'LOGIN',
     HOME_DATA: 'HOME_DATA',
     USER_LOGOUT: 'USERLOGOUT',
+    CREATE_POST: 'CREATE_POST',
+    DELETE_POST: 'DELETE_POST'
   };

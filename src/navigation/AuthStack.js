@@ -5,7 +5,8 @@ import SignUpScreen from '../screens/SignUpScreen'
 
 import navigationStrings from './navigationStrings';
 
-export default function (Stack, screen) {
+export default function (Stack) {
+
     return (
         <>
             <Stack.Screen
