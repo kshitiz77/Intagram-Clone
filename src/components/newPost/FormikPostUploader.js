@@ -1,13 +1,10 @@
 import { View, Text, TextInput, Image, StyleSheet, FlatList, Switch, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 import { Formik } from 'formik'
 import { LOCATION } from '../../data/location'
 import { MUSIC_LIST } from '../../data/music'
 import { styles } from '../../styles/styles'
-
-const PlaceholderImg = require('../../assets/images/instagram-icon.png')
-
 import { USERS } from '../../data/users'
 import { Divider } from 'react-native-elements/dist/divider/Divider'
 
@@ -17,14 +14,19 @@ const uploadPostSchema = Yup.object().shape({
 })
 
 const FormikPostUploader = () => {
-    const [thumbnailUrl, setThumbnailUrl] = useState(PlaceholderImg)
-    const [isFBEnabled, setIsFBEnabled] = useState(false);
-    const [isTwitterEnabled, setIsTwitterEnabled] = useState(false);
-    const [isTumblrEnabled, setIsTumblrEnabled] = useState(false);
+    
 
     const toggleFBSwitchBtn = () => setIsFBEnabled(previousState => !previousState);
     const toggleTwitterSwitchBtn = () => setIsTwitterEnabled(previousState => !previousState);
     const toggleTumblrSwitchBtn = () => setIsTumblrEnabled(previousState => !previousState);
+
+    useEffect(() => {
+        setThumbnailUrl(userPostImage)
+    }, [thumbnailUrl])
+
+    const handleCaption = (caption) =>{
+        setCaption(() => caption)
+    }
 
     return (
         <Formik
@@ -42,20 +44,20 @@ const FormikPostUploader = () => {
                                 placeholderTextColor='white'
                                 style={styles.addNewPostCaptionText}
                                 multiline={true}
-                                onChangeText={handleChange('caption')}
-                                onBlur={handleBlur('caption')}
-                                value={values.caption}
+                                onChangeText={(caption) => handleCaption(caption)}
+                                
+                                value={caption}
                             ></TextInput>
                         </View>
-                        <Image source={PlaceholderImg} style={styles.addNewPostImg} />
+                        <Image source={thumbnailUrl} style={styles.addNewPostImg} />
                     </View>
                     <Divider width={1} orientation='vertical' />
                     <TouchableOpacity>
-                    <Text style={styles.addNewPostActionText}>Tag people</Text>
+                        <Text style={styles.addNewPostActionText}>Tag people</Text>
                     </TouchableOpacity>
                     <Divider width={1} orientation='vertical' />
                     <TouchableOpacity>
-                    <Text style={styles.addNewPostActionText}>Add location</Text>
+                        <Text style={styles.addNewPostActionText}>Add location</Text>
                     </TouchableOpacity>
                     <Divider width={1} orientation='vertical' />
                     <FlatList
@@ -64,14 +66,16 @@ const FormikPostUploader = () => {
                         horizontal={true}
                         renderItem={(element) => {
                             return (
+                                <TouchableOpacity>
                                 <View style={styles.addNewPostLocationTextContainer}>
                                     <Text style={styles.addNewPostLocationText}>{element.item.city}, {element.item.country}</Text>
                                 </View>
+                                </TouchableOpacity>
                             )
                         }}></FlatList>
                     <Divider width={1} orientation='vertical' />
                     <TouchableOpacity>
-                    <Text style={styles.addNewPostActionText}>Add music</Text>
+                        <Text style={styles.addNewPostActionText}>Add music</Text>
                     </TouchableOpacity>
                     <Divider width={1} orientation='vertical' />
                     <FlatList
@@ -98,11 +102,11 @@ const FormikPostUploader = () => {
                             </View>
                             <View style={styles.addNewPostPostOnFacebookRightSideContainer}>
                                 <Switch
-                                   trackColor={{ false: "#767577", true: "#2e4f87" }}
-                                   thumbColor={isFBEnabled ? "#45a8ff" : "#f4f3f4"}
-                                   ios_backgroundColor="#3e3e3e"
-                                   onValueChange={toggleFBSwitchBtn}
-                                   value={isFBEnabled}
+                                    trackColor={{ false: "#767577", true: "#2e4f87" }}
+                                    thumbColor={isFBEnabled ? "#45a8ff" : "#f4f3f4"}
+                                    ios_backgroundColor="#3e3e3e"
+                                    onValueChange={toggleFBSwitchBtn}
+                                    value={isFBEnabled}
                                 />
                             </View>
                         </View>
@@ -135,10 +139,10 @@ const FormikPostUploader = () => {
                             </View>
                         </View>
                     </View>
-                        <Divider width={1} orientation='vertical' />
-                        <TouchableOpacity>
-                            <Text style={styles.addNewPostAdvancedSettingsText}>Advanced settings</Text>
-                        </TouchableOpacity>
+                    <Divider width={1} orientation='vertical' />
+                    <TouchableOpacity>
+                        <Text style={styles.addNewPostAdvancedSettingsText}>Advanced settings</Text>
+                    </TouchableOpacity>
                 </>
             }
             }

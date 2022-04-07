@@ -11,3 +11,9 @@ export const deletePost = () =>{
         type: types.DELETE_POST
     }
 }
+
+export const uploadImage = () =>{
+    return{
+        type: types.UPLOAD_IMAGE
+    }
+}

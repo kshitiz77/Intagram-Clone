@@ -1,9 +1,12 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React, { createRef } from 'react'
+import types from '../../redux/types';
 import { styles } from '../../styles/styles'
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { Divider } from 'react-native-elements/dist/divider/Divider';
 import AddNewPost from '../newPost/AddNewPost';
+import { uploadImage } from '../../redux/actions/post';
+import { useDispatch } from 'react-redux';
 import {launchImageLibrary, ImageLibraryOptions} from 'react-native-image-picker'
 
 const ActionSheetAddPostMenu = [
@@ -67,7 +70,8 @@ const actionSheetPostMenuRef  = createRef();
 const actionSheetMenuRef = createRef();
 
 const Header = ({navigation}) => {
-  
+const dispatch = useDispatch();
+
   const selectPost = (event, title) =>{
     if(title === 'Post'){
       const options:ImageLibraryOptions ={
@@ -75,8 +79,8 @@ const Header = ({navigation}) => {
         quality: 0.8
       }
       launchImageLibrary(options, (response) =>{
-        const image = response.assets[0].uri
-        
+        const image = response.assets[0]
+        dispatch({type: types.UPLOAD_IMAGE, payload : image});
         navigation.navigate(title)
       })
     }else{
