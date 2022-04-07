@@ -3,7 +3,7 @@ import React, { createContext } from 'react'
 import { useSelector } from 'react-redux'
 import AddNewPost from '../components/newPost/AddNewPost'
 const PlaceholderImg = require('../assets/images/instagram-icon.png')
-const NewContext = createContext();
+export const NewPostContext = createContext();
 
 const NewPostScreen = () => {
   const [thumbnailUrl, setThumbnailUrl] = useState(PlaceholderImg)
@@ -37,9 +37,9 @@ const NewPostScreen = () => {
   }
   return (
     <>
-      <NewContext.Provider value={contextValue}>
-        <AddNewPost />
-      </NewContext.Provider>
+      <NewPostContext.Provider value={contextValue}>
+        <AddNewPost/>
+      </NewPostContext.Provider>
     </>
 
   )

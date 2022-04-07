@@ -1,11 +1,12 @@
 import { View, Text, TextInput, Image, StyleSheet, FlatList, Switch, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import * as Yup from 'yup'
 import { Formik } from 'formik'
 import { LOCATION } from '../../data/location'
 import { MUSIC_LIST } from '../../data/music'
 import { styles } from '../../styles/styles'
 import { USERS } from '../../data/users'
+import { NewPostContext } from '../../screens/NewPostScreen'
 import { Divider } from 'react-native-elements/dist/divider/Divider'
 
 const uploadPostSchema = Yup.object().shape({
@@ -14,18 +15,18 @@ const uploadPostSchema = Yup.object().shape({
 })
 
 const FormikPostUploader = () => {
+    const newPostContext = useContext(NewPostContext)
     
-
-    const toggleFBSwitchBtn = () => setIsFBEnabled(previousState => !previousState);
-    const toggleTwitterSwitchBtn = () => setIsTwitterEnabled(previousState => !previousState);
-    const toggleTumblrSwitchBtn = () => setIsTumblrEnabled(previousState => !previousState);
+    const toggleFBSwitchBtn = () => newPostContext.setIsFBEnabled(previousState => !previousState);
+    const toggleTwitterSwitchBtn = () => newPostContext.setIsTwitterEnabled(previousState => !previousState);
+    const toggleTumblrSwitchBtn = () => newPostContext.setIsTumblrEnabled(previousState => !previousState);
 
     useEffect(() => {
-        setThumbnailUrl(userPostImage)
-    }, [thumbnailUrl])
+        newPostContext.setThumbnailUrl(newPostContext.userPostImage)
+    }, [newPostContext.thumbnailUrl])
 
     const handleCaption = (caption) =>{
-        setCaption(() => caption)
+        newPostContext.setCaption(() => caption)
     }
 
     return (
@@ -49,7 +50,7 @@ const FormikPostUploader = () => {
                                 value={caption}
                             ></TextInput>
                         </View>
-                        <Image source={thumbnailUrl} style={styles.addNewPostImg} />
+                        <Image source={newPostContext.thumbnailUrl} style={styles.addNewPostImg} />
                     </View>
                     <Divider width={1} orientation='vertical' />
                     <TouchableOpacity>
